@@ -10,6 +10,19 @@ function addLinks_extrahands() {
 add_action('wp_enqueue_scripts', 'addLinks_extrahands');
 
 
+function addCustomMenus_extrahands(){
+  add_theme_support('menus');
+  register_nav_menus( array(
+    'top_nav' => __('Top Menu'),
+    'foot_nav' => __('Footer Menu'),
+    'side_nav' => __('Side Menu')
+  ));
+}
+add_action('after_setup_theme', 'addCustomMenus_extrahands');
 
+function register_navwalker(){
+	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+}
+add_action( 'after_setup_theme', 'register_navwalker' );
 
  ?>
