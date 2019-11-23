@@ -1,37 +1,34 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo get_bloginfo('name'); ?></title>
-    <?php wp_head(); ?>
-  </head>
-  <body>
-    <div class="topInfo d-flex justify-content-between px-3">
-      <p class="text-light">0800 535 355 &nbsp;&nbsp;&nbsp;&nbsp;info@anextrapairofhands.co.nz</p>
-      <button class="btn btn-info" type="button" name="button">Get a quote</button>
+<?php get_header(); ?>
+<div class="container text-center">
+  <h1 class="display-4 pt-5 mt-5">Professional Cleaning and Gardening Company</h1>
+  <p class="spacing pb-5">WE TAKE CARE OF THE LITTLE THINGS</p>
+  <button class="btn btn-lg btn-warning my-5" type="button" name="button">BOOK NOW</button>
+</div>
+
+<div class="container mt-5">
+  <section class="services">
+    <h3 class="text-center py-3">Services</h3>
+    <div class="row">
+      <div class="col col-12 d-flex">
+        <i class="material-icons svc-icons">home</i>
+        <p class="px-5">Regular home cleaning is our most sought-after offering. We provide a spring-clean service to give your residence a thorough refresh for important occasions.</p>
+        <button class="btn btn-light btn-sm svc-btn" type="button" name="button">Learn More</button>
+      </div>
+      <div class="col col-12 d-flex">
+        <i class="material-icons svc-icons">local_florist</i>
+        <p class="px-5">Our qualified gardening teams will keep your garden looking at its best throughout the seasons. Services include weeding, pruning, planting and spraying. </p>
+        <button class="btn btn-light btn-sm svc-btn" type="button" name="button">Learn More</button>
+      </div>
+      <div class="col col-12 d-flex">
+        <i class="material-icons svc-icons">business</i>
+        <p class="px-5">Office cleaning is a reliable service provided by our security-checked team. If you have green areas around your office, our gardening team can take care of those.</p>
+        <button class="btn btn-light btn-sm svc-btn" type="button" name="button">Learn More</button>
+      </div>
     </div>
-    <?php if (has_nav_menu('top_nav')): ?>
-   <nav class="navbar navbar-expand-md navbar-dark bg-blue d-flex" role="navigation">
-        <button class="navbar-toggler toggleBtn" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-           <a class="navbar-brand" href="#">AN EXTRA PAIR OF HANDS</a>
-             <?php
-                 wp_nav_menu( array(
-                     'theme_location'    => 'top_nav',
-                     'depth'             => 2,
-                     'container'         => 'div',
-                     'container_class'   => 'collapse navbar-collapse',
-                     'container_id'      => 'top_nav',
-                     'menu_class'        => 'nav navbar-nav',
-                     'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-                     'walker'            => new WP_Bootstrap_Navwalker(),
-                 ) );
-             ?>
-             </div>
-         </nav>
-         <?php endif; ?>
+
+  </section>
+
+</div>
 
 
 
