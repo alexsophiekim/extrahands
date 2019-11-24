@@ -1,0 +1,34 @@
+{
+  "name": "extrahands",
+  "version": "1.0.0",
+  "description": "This is school project which redesign exist service provider business website.",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexsophiekim/extrahands.git"
+  },
+  "keywords": [
+    "wordpress",
+    "php",
+    "custom",
+    "customtheme",
+    "businessweb"
+  ],
+  "author": "Sophie Kim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexsophiekim/extrahands/issues"
+  },
+  "homepage": "https://github.com/alexsophiekim/extrahands#readme",
+  "devDependencies": {
+    "grunt-contrib-csslint": "^2.0.0",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-jshint": "^2.1.0",
+    "grunt-contrib-uglify-es": "^3.3.0",
+    "grunt-contrib-watch": "^1.1.0"
+  },
+  "dependencies": {}
+}

@@ -1,5 +1,4 @@
 <?php
-
   function mytheme_customize_register( $wp_customize){
     $wp_customize -> add_setting('extrahands_BGColour', array(
         'default' =>'#2F80ED',
@@ -19,15 +18,15 @@
       'section' => 'colors',
       'setting' => 'extrahands_textColour'
     )));
-    // $wp_customize->add_setting( 'extrahands_headerFooterColour' , array(
-    //   'default'   => '#0275D8',
-    //   'transport' => 'refresh',
-    // ));
-    // $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'extrahands_headerfooterColourControl', array(
-    //   'label'      => __( 'Header and Footer Colour', 'extrahandsCustom' ),
-    //   'section'    => 'colors',
-    //   'settings'   => 'extrahands_footerColour',
-    // )));
+    $wp_customize->add_setting( 'extrahands_barColour' , array(
+      'default'   => '#0275D8',
+      'transport' => 'refresh',
+    ));
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'extrahands_barColourControl', array(
+      'label'      => __( 'Top and Bottom Bar Colour', 'extrahandsCustom' ),
+      'section'    => 'colors',
+      'settings'   => 'extrahands_barColour',
+    )));
     $wp_customize->add_section( 'extrahands_copyright' , array(
           'title'      => __('copyright','extrahandsCustom'),
           'priority'   => 30,
@@ -52,7 +51,7 @@
                  color: <?php echo get_theme_mod('extrahands_textColour', '#fff');?>
              }
              .bg-blue{
-                 background-color: <?php echo get_theme_mod('extrahands_headerFooterColour', '#0275D8'); ?> !important;
+                 background-color: <?php echo get_theme_mod('extrahands_barColour', '#0275D8'); ?> !important;
              }
 
          </style>
