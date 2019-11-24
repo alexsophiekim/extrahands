@@ -5,7 +5,7 @@ function addLinks_extrahands() {
     wp_enqueue_script('jquery');
     wp_enqueue_script('bootstrapJS_extrahands', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '4.3.1', true);
     wp_enqueue_script('customJS_extrahands', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), '0.0.1', true);
-    wp_enqueue_style('MaterialIcons', 'https://fonts.googleapis.com/icon?family=Material+Icons'); 
+    wp_enqueue_style('MaterialIcons', 'https://fonts.googleapis.com/icon?family=Material+Icons');
 };
 
 add_action('wp_enqueue_scripts', 'addLinks_extrahands');
@@ -25,5 +25,9 @@ function register_navwalker(){
 	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 }
 add_action( 'after_setup_theme', 'register_navwalker' );
+
+
+
+require( get_template_directory() . '/inc/customizer.php' );
 
  ?>
