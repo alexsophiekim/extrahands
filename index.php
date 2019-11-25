@@ -1,7 +1,11 @@
 <?php get_header(); ?>
 <div class="container text-center">
-  <h1 class="display-4 pt-5 mt-5">Professional Cleaning and Gardening Company</h1>
-  <p class="spacing pb-5">WE TAKE CARE OF THE LITTLE THINGS</p>
+    <?php if(get_theme_mod('extrahands_main_intro')): ?>
+        <h1 class="display-4 pt-5 mt-5"><?php echo get_theme_mod('extrahands_main_intro'); ?></h1>
+    <?php endif; ?>
+    <?php if(get_theme_mod('extrahands_sub_intro')): ?>
+        <p class="spacing pb-5"><?php echo get_theme_mod('extrahands_sub_intro'); ?></p>
+    <?php endif; ?>
   <button class="btn btn-lg btn-warning my-5" type="button" name="button">BOOK NOW</button>
 </div>
 <?php if(has_nav_menu('side_nav')): ?>
@@ -28,40 +32,55 @@
   </section>
 </div>
 <?php endif; ?>
-<?php if (have_posts()): ?>
-<div class="container bg-white">
+
+<div class="bg-white">
   <section class="testimonial">
     <h3 class="text-center py-3 text-dark">Testimonial</h3>
     <div class="row">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="<?php echo esc_url(get_theme_mod('extrahands_contentImg_1')); ?>" alt="First slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="<?php echo esc_url(get_theme_mod('extrahands_contentImg_2')); ?>" alt="Second slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="<?php echo esc_url(get_theme_mod('extrahands_contentImg_3')); ?>" alt="Third slide">
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+        <?php
+        for ($i=1; $i <= 3 ; $i++) {
+            if((get_theme_mod('extrahands_testimonial_img_'.$i)) ||(get_theme_mod('extrahands_testimonial_text_'.$i))){
+                $firstSlide = $i;
+                break;
+            }
+        }
+        ?>
+        <?php if(isset($firstSlide)): ?>
+            <div class="container">
+                <div id="homeCarousel" class="carousel slide" data-ride="carousel">
+                    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                        </ol>
+                    <div class="carousel-inner">
+                        <?php for ($i=1; $i <= 3 ; $i++) :?>
+                            <?php if(get_theme_mod('extrahands_testimonial_img_'.$i)):?>
+                                <div class="carousel-item <?php if($firstSlide === $i){echo 'active';} ?>">
+                                    <img src="<?php echo get_theme_mod( 'extrahands_testimonial_img_' . $i ); ?>" class="d-block w-100" alt="">
+                                    <div class="carousel-caption d-none d-md-block">
+                                      <p><?php echo get_theme_mod('extrahands_testimonial_text_'.$i); ?></p>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                        <?php endfor; ?>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                </div>
+            </div>
+        <?php endif; ?>
     </div>
   </section>
 </div>
-<?php endif; ?>
+
 
 <?php get_footer(); ?>

@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="bg-blue topInfo d-flex justify-content-between align-items-center px-3">
-    <p class="text-light pb-0 mb-0">0800 535 355 &nbsp;&nbsp;&nbsp;&nbsp;info@anextrapairofhands.co.nz</p>
+    <p class="text-light pb-0 mb-0"><?php echo get_theme_mod('extrahands_phone'); ?> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo get_theme_mod('extrahands_email'); ?></p>
     <button class="quoteBtn my-1">Get a quote</button>
   </div>
   <?php if (has_nav_menu('top_nav')): ?>
