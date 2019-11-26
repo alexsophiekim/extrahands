@@ -13,7 +13,7 @@ function addCustomMenus_extrahands(){
   add_theme_support('menus');
   register_nav_menus( array(
     'top_nav' => __('Top Menu'),
-    'foot_nav' => __('Footer Menu'),
+    'footer_nav' => __('Footer Menu'),
     'side_nav' => __('Side Menu')
   ));
 }
@@ -36,5 +36,6 @@ function extrahands_logo() {
 add_action('after_setup_theme', 'extrahands_logo');
 
 require( get_template_directory() . '/inc/customizer.php' );
+require( get_template_directory() . '/inc/footerNav.php' );
 
  ?>

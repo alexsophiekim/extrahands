@@ -1,20 +1,21 @@
 <?php if(has_nav_menu('footer_nav')): ?>
-  <footer class="bg-white">
+  <footer class="bg-secondary">
     <div class="row">
-
-        <?php
-          wp_nav_menu(array( 'theme_location' => 'footer_nav',
-                             'container' => '',
-                             'menu_class' => 'footerNav'
-        ));
-         ?>
+        <div class="col">
+            <?php
+              wp_nav_menu(array( 'theme_location' => 'footer_nav',
+                                 'container' => '',
+                                 'menu_class' => 'footerNav'
+            ));
+             ?>
+        </div>
 
     </div>
   </footer>
 <?php endif; ?>
-<?php if (get_theme_mod('extrahands_copyright')): ?>
+<?php if (get_theme_mod('extrahands_copyright_setting')): ?>
   <div class="copyright bg-blue text-center">
-    <p class="text-center"><?php echo get_theme_mod('extrahands_copyright') ?></p>
+    <p class="text-center mb-0"><?php echo get_theme_mod('extrahands_copyright_setting');?></p>
   </div>
 <?php endif; ?>
 

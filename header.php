@@ -8,7 +8,12 @@
 </head>
 <body>
   <div class="bg-blue topInfo d-flex justify-content-between align-items-center px-3">
-    <p class="text-light pb-0 mb-0"><?php echo get_theme_mod('extrahands_phone'); ?> &nbsp;&nbsp;&nbsp;&nbsp;<?php echo get_theme_mod('extrahands_email'); ?></p>
+      <?php if (get_theme_mod('extrahands_phone') && (get_theme_mod('extrahands_email'))): ?>
+          <p class="text-light pb-0 mb-0">
+              <?php echo get_theme_mod('extrahands_phone'); ?> &nbsp;&nbsp;&nbsp;&nbsp;
+              <?php echo get_theme_mod('extrahands_email'); ?>
+          </p>
+      <?php endif; ?>
     <button class="quoteBtn my-1">Get a quote</button>
   </div>
   <?php if (has_nav_menu('top_nav')): ?>
@@ -22,16 +27,16 @@
         <a class="navbar-brand" href="#"><?php echo get_bloginfo('name'); ?></a>
      <?php endif;  ?>
       <?php
-      wp_nav_menu( array(
-        'theme_location'    => 'top_nav',
-        'depth'             => 2,
-        'container'         => 'div',
-        'container_class'   => 'collapse navbar-collapse',
-        'container_id'      => 'top_nav',
-        'menu_class'        => 'nav navbar-nav',
-        'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-        'walker'            => new WP_Bootstrap_Navwalker(),
-      ) );
+          wp_nav_menu( array(
+            'theme_location'    => 'top_nav',
+            'depth'             => 2,
+            'container'         => 'div',
+            'container_class'   => 'collapse navbar-collapse',
+            'container_id'      => 'top_nav',
+            'menu_class'        => 'nav navbar-nav',
+            'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+            'walker'            => new WP_Bootstrap_Navwalker(),
+          ));
       ?>
       </div>
     </nav>

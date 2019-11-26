@@ -31,14 +31,14 @@
           'title'      => __('Copyright','extrahands'),
           'priority'   => 30,
     ));
-    $wp_customize->add_setting('extrahands_theme_copyright', array(
+    $wp_customize->add_setting('extrahands_copyright_setting', array(
         'default'        => 'Copyright © 2019 Create by Sophie Kim',
         'transport'      => 'refresh',
     ));
-    $wp_customize->add_control('extrahands_copyright', array(
+    $wp_customize->add_control('extrahands_copyright_control', array(
        'label'      => __('Copyright', 'extrahandsCustom'),
        'section'    => 'extrahands_copyright',
-       'settings'   => 'extrahands_theme_copyright'
+       'settings'   => 'extrahands_copyright_setting'
     ));
 
     $wp_customize->add_section('extrahands_header', array(
