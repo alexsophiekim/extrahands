@@ -6,23 +6,27 @@
     <?php if(get_theme_mod('extrahands_sub_intro')): ?>
         <p class="spacing pb-5"><?php echo get_theme_mod('extrahands_sub_intro'); ?></p>
     <?php endif; ?>
-  <button class="btn btn-lg btn-warning my-5" type="button" name="button">BOOK NOW</button>
+  <button class="btn btn-lg btn-warning my-5 booknowBtn" type="button" name="button">BOOK NOW</button>
 </div>
-<?php if(has_nav_menu('side_nav')): ?>
+
+<?php
+    $args = array(
+        'post_type' => 'service'
+    );
+    $allServices = new WP_Query($args);
+ ?>
+
+
 <div class="container mt-5">
   <section class="services">
     <h3 class="text-center py-3">Services</h3>
     <div class="row">
-      <div class="col col-12 d-flex">
-        <i class="material-icons svc-icons">home</i>
-        <p class="px-5">Regular home cleaning is our most sought-after offering. We provide a spring-clean service to give your residence a thorough refresh for important occasions.</p>
-        <button class="btn btn-light btn-sm svc-btn" type="button" name="button">Learn More</button>
-      </div>
-      <div class="col col-12 d-flex">
+
+      <!-- <div class="col col-12 d-flex">
         <i class="material-icons svc-icons">local_florist</i>
         <p class="px-5">Our qualified gardening teams will keep your garden looking at its best throughout the seasons. Services include weeding, pruning, planting and spraying. </p>
         <button class="btn btn-light btn-sm svc-btn" type="button" name="button">Learn More</button>
-      </div>
+      </div> -->
       <div class="col col-12 d-flex">
         <i class="material-icons svc-icons">business</i>
         <p class="px-5">Office cleaning is a reliable service provided by our security-checked team. If you have green areas around your office, our gardening team can take care of those.</p>
@@ -31,7 +35,9 @@
     </div>
   </section>
 </div>
-<?php endif; ?>
+
+
+
 
 <div class="bg-white">
   <section class="testimonial">

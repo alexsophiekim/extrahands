@@ -13,8 +13,11 @@ function addCustomMenus_extrahands(){
   add_theme_support('menus');
   register_nav_menus( array(
     'top_nav' => __('Top Menu'),
-    'footer_nav' => __('Footer Menu'),
-    'side_nav' => __('Side Menu')
+    'service_nav' => __('Service Menu'),
+    'quick_nav' => __('Quick Menu'),
+    'branches_nav' => __('Branches Menu'),
+    'company_nav' => __('Company Menu'),
+    'contact_nav' => __('Contact Menu')
   ));
 }
 add_action('after_setup_theme', 'addCustomMenus_extrahands');
@@ -35,7 +38,33 @@ function extrahands_logo() {
 };
 add_action('after_setup_theme', 'extrahands_logo');
 
+function add_custom_post_type(){
+    $args = array(
+        'labels' => array(
+            'name' => 'Services',
+            'singular_name' => 'Service',
+            'add_new_item' => 'Add New Item'
+    ),
+    'description'   => 'A list of main services we provide',
+    'public'        => true,
+    'hierarchical' => true,
+    'show_in_nav_menus' => false,
+    'show_in_rest' => true,
+    'menu_position' => 6,
+    'menu_icon' => 'dashicons-smiley',
+    'supports' => array(
+        'title',
+        'information'
+    ),
+    'delete_with_user' => false
+    );
+    register_post_type('service',$args);
+}
+add_action('init', 'add_custom_post_types');
+
+
+
 require( get_template_directory() . '/inc/customizer.php' );
-require( get_template_directory() . '/inc/footerNav.php' );
+
 
  ?>

@@ -1,62 +1,81 @@
 module.exports = function(grunt){
     grunt.initConfig({
-      jshint: {
-          files: ['*.js', 'js/*.js','!js/*.js'],
-          options: {
-              globals: {
-                  jQuery: true
-              },
-              esversion: 6
-          }
-      },
+
       csslint: {
           strict: {
             options: {
               import: 2,
               quiet: true
             },
-            src: ['css/style.css']
+            src: ['assets/css/style.css', '!assets/css/*.min.css']
           },
         },
+        sass: {
+			dist: {
+                options: {
+                  sourcemap: false,
+                  style:'expanded',
+                },
+				files: {
+			    	'assets/css/style.css': 'assets/scss/style.scss'
+				}
+			}
+		},
         cssmin: {
-          target: {
-              files: [{
-                  expand: true,
-                  src: ['css/*.css', 'css/!*.min.css'],
-                  dest: '',
-                  ext: '.min.css'
-              }]
-          }
+		  target: {
+		    files: [{
+		      expand: true,
+              cwd: 'assets/css',
+		      src: ['*.css', '!*.min.css'],
+		      dest: 'assets/css',
+		      ext: '.min.css'
+		    }]
+		  }
+		},
+        jshint: {
+            files: ['assets/js/*.js','!assets/js/*.min.js'],
+            options: {
+                globals: {
+                    jQuery: true
+                },
+                esversion: 6
+            }
         },
         uglify:{
           my_target:{
               files: {
-                  'js/script.min.js':['js/script.js']
-              }
+  	          'assets/js/script.min.js': ['assets/js/script.js']
+  	        }
           }
         },
         watch: {
-            css:{
-                files: ['css/style.css','!css/*.min.js'],
-                tasks: ['csslint']
-            },
-            js:{
-                files: ['js/*.js', '!js/*.min.js'],
-                tasks: ['jshint']
-            }
+            scss: {
+  	        files: ['assets/scss/*.scss'],
+  	        tasks: ['sass', 'cssmin', 'csslint']
+  	      },
+  	      csslint: {
+  	        files: ['assets/css/*.css', '!assets/css/*.min.css'],
+  	        tasks: ['csslint']
+  	      },
+  	      js: {
+  	        files: ['assets/js/*.js', '!assets/js/*.min.js'],
+  	        tasks: ['jshint', 'uglify']
+  	      }
         }
     });
     // load plugins
-    grunt.loadNpmTasks('grunt-contrib-jshint');
+
     grunt.loadNpmTasks('grunt-contrib-csslint');
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify-es');
 
     // register tasks
-    grunt.registerTask('checkJS', ['jshint']);
-    grunt.registerTask('checkCSS',['csslint']);
-    grunt.registerTask('minifyCSS', ['cssmin']);
-    grunt.registerTask('minifyJS', ['uglify']);
-    grunt.registerTask('runWatch', ['watch']);
+    grunt.registerTask('setup',['sass','cssmin']);
+    grunt.registerTask('compile',['sass'] );
+    grunt.registerTask('check',['csslint','jshint']);
+    grunt.registerTask('minify', ['cssmin','uglify']);
+    grunt.registerTask('default', ['watch']);
 };
