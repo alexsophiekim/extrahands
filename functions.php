@@ -38,33 +38,29 @@ function extrahands_logo() {
 };
 add_action('after_setup_theme', 'extrahands_logo');
 
-function add_custom_post_type(){
+function add_service_post_types(){
     $args = array(
         'labels' => array(
             'name' => 'Services',
             'singular_name' => 'Service',
-            'add_new_item' => 'Add New Item'
-    ),
-    'description'   => 'A list of main services we provide',
-    'public'        => true,
-    'hierarchical' => true,
-    'show_in_nav_menus' => false,
-    'show_in_rest' => true,
-    'menu_position' => 6,
-    'menu_icon' => 'dashicons-smiley',
-    'supports' => array(
-        'title',
-        'information'
-    ),
-    'delete_with_user' => false
+        ),
+        'hierarchical' => true,
+        'show_in_nav_menus' => false,
+        'show_in_rest' => false,
+        'menu_position' => 6,
+        'menu_icon' => 'dashicons-smiley',
+        'delete_with_user' => false,
+        'public' => true,
+        'supports' => array('thumbnail','editor','title')
     );
-    register_post_type('service',$args);
+    register_post_type('service', $args);
 }
-add_action('init', 'add_custom_post_types');
+add_action('init', 'add_service_post_types');
 
 
 
-require( get_template_directory() . '/inc/customizer.php' );
+require_once get_template_directory() . '/inc/customizer.php';
+require_once get_template_directory() . '/inc/custom_fields.php';
 
 
  ?>

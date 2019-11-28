@@ -51,11 +51,11 @@ module.exports = function(grunt){
         watch: {
             scss: {
   	        files: ['assets/scss/*.scss'],
-  	        tasks: ['sass', 'cssmin', 'csslint']
+  	        tasks: ['sass']
   	      },
-  	      csslint: {
+  	      cssmin: {
   	        files: ['assets/css/*.css', '!assets/css/*.min.css'],
-  	        tasks: ['csslint']
+  	        tasks: ['csslint','cssmin']
   	      },
   	      js: {
   	        files: ['assets/js/*.js', '!assets/js/*.min.js'],
@@ -73,9 +73,6 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-uglify-es');
 
     // register tasks
-    grunt.registerTask('setup',['sass','cssmin']);
-    grunt.registerTask('compile',['sass'] );
-    grunt.registerTask('check',['csslint','jshint']);
-    grunt.registerTask('minify', ['cssmin','uglify']);
+
     grunt.registerTask('default', ['watch']);
 };

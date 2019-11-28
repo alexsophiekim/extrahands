@@ -52,7 +52,7 @@ body {
   }
 }
 
-.menu-item:active, .nav-link:active {
+.nav-link:hover, .nav-link:active {
   border-bottom: 3px solid #F2C94C;
 }
 
@@ -75,6 +75,13 @@ body {
 .svc-btn {
   max-height: 30px;
   min-width: 100px;
+}
+.svc-btn a {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+.svc-btn a:hover {
+  color: #2F80ED !important;
 }
 
 .carouselImg {

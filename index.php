@@ -16,27 +16,24 @@
     $allServices = new WP_Query($args);
  ?>
 
-
+<?php if($allServices -> have_posts()): ?>
 <div class="container mt-5">
   <section class="services">
     <h3 class="text-center py-3">Services</h3>
     <div class="row">
-
-      <!-- <div class="col col-12 d-flex">
-        <i class="material-icons svc-icons">local_florist</i>
-        <p class="px-5">Our qualified gardening teams will keep your garden looking at its best throughout the seasons. Services include weeding, pruning, planting and spraying. </p>
-        <button class="btn btn-light btn-sm svc-btn" type="button" name="button">Learn More</button>
-      </div> -->
+     <?php while($allServices -> have_posts()): $allServices-> the_post(); ?>
       <div class="col col-12 d-flex">
-        <i class="material-icons svc-icons">business</i>
-        <p class="px-5">Office cleaning is a reliable service provided by our security-checked team. If you have green areas around your office, our gardening team can take care of those.</p>
-        <button class="btn btn-light btn-sm svc-btn" type="button" name="button">Learn More</button>
+        <i class="material-icons svc-icons pr-5"><?php the_title(); ?></i>
+        <p class="px-5"><?php echo get_post_meta(get_the_ID(), 'service_info', true); ?></p>
+        <button class="btn btn-outline-light btn-sm svc-btn" type="button" name="button">
+            <a class="learnMore" href="<?php the_permalink(); ?>">Learn More</a>
+        </button>
       </div>
+    <?php endwhile; ?>
     </div>
   </section>
 </div>
-
-
+<?php endif; ?>
 
 
 <div class="bg-white">
