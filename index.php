@@ -56,20 +56,37 @@
                           <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
                           <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
                         </ol>
-                    <div class="carousel-inner">
-                        <?php for ($i=1; $i <= 3 ; $i++) :?>
-                            <?php if(get_theme_mod('extrahands_testimonial_img_'.$i)):?>
-                                <div class="carousel-item d-flex justify-content-center <?php if($firstSlide === $i){echo 'active';} ?>">
-                                    <img src="<?php echo get_theme_mod( 'extrahands_testimonial_img_' . $i ); ?>" class="carouselImg d-block" alt="">
-                                    <?php if(get_theme_mod('extrahands_testimonial_text_'.$i)): ?>
-                                        <div class="carousel-caption d-none d-md-block">
-                                          <p class="text-dark"><?php echo get_theme_mod('extrahands_testimonial_text_'.$i); ?></p>
-                                        </div>
-                                    <?php endif; ?>
-                                </div>
-                            <?php endif; ?>
-                        <?php endfor; ?>
-                    </div>
+                      <?php
+                          for ($i=1; $i <= 3 ; $i++) {
+                              if(get_theme_mod('extrahands_testimonial_img_'.$i)){
+                                  $firstSlide = $i;
+                                  break;
+                              }
+                          }
+                       ?>
+                       <?php if(isset($firstSlide)): ?>
+                           <div class="container">
+                               <div id="homeCarousel" class="carousel slide" data-ride="carousel">
+                                   <div class="carousel-inner">
+                                      <?php for ($i=1; $i <= 3 ; $i++): ?>
+                                          <?php if(get_theme_mod('extrahands_testimonial_img_'.$i)): ?>
+                                             <div class="carousel-item <?php if($firstSlide === $i){ echo 'active';} ?>">
+                                                 <img src="<?php echo get_theme_mod( 'extrahands_testimonial_img_' . $i ); ?>" class="d-block carouselImg mx-auto" alt="testimonialImg">
+                                             </div>
+                                          <?php endif; ?>
+                                      <?php endfor; ?>
+                                   </div>
+                                   <?php for ($i=1; $i <= 3 ; $i++): ?>
+                                       <?php if(get_theme_mod('extrahands_testimonial_text_'.$i)): ?>
+                                         <div class="carousel-caption d-none d-md-block ">
+                                           <p class="text-dark"><?php echo get_theme_mod('extrahands_testimonial_text_'.$i); ?></p>
+                                         </div>
+                                       <?php endif; ?>
+                                     <?php endfor; ?>
+                               </div>
+
+                       <?php endif; ?>
+
                     <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                       <span class="sr-only">Previous</span>
@@ -79,7 +96,6 @@
                       <span class="sr-only">Next</span>
                     </a>
                 </div>
-            </div>
         <?php endif; ?>
     </div>
   </section>

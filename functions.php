@@ -6,8 +6,14 @@ function addLinks_extrahands() {
     wp_enqueue_script('bootstrapJS_extrahands', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '4.3.1', true);
     wp_enqueue_script('customJS_extrahands', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), '0.0.1', true);
     wp_enqueue_style('MaterialIcons', 'https://fonts.googleapis.com/icon?family=Material+Icons');
+    wp_enqueue_style('fonts','https://fonts.googleapis.com/css?family=Amiko:400,600,700|Anton|Bangers&display=swap');
 };
 add_action('wp_enqueue_scripts', 'addLinks_extrahands');
+
+add_theme_support('wp-block-styles');
+add_theme_support('title_tag');
+add_theme_support('post-thumbnails',  array( 'post' ) );
+add_theme_support('post-formats', array('video', 'audio', 'image', 'gallery'));
 
 function addCustomMenus_extrahands(){
   add_theme_support('menus');

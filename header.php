@@ -4,11 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?php echo get_bloginfo('name'); ?></title>
-  <link href="https://fonts.googleapis.com/css?family=Anton|Bangers|Source+Sans+Pro&display=swap'">
   <?php wp_head(); ?>
 </head>
 <body>
-  <div class="bg-blue topInfo d-flex justify-content-between align-items-center px-3">
+  <div class="bg-blue fixed-top d-flex justify-content-between align-items-center px-3">
       <?php if (get_theme_mod('extrahands_phone') && (get_theme_mod('extrahands_email'))): ?>
           <p class="text-light pb-0 mb-0">
               <?php echo get_theme_mod('extrahands_phone'); ?> &nbsp;&nbsp;&nbsp;&nbsp;
