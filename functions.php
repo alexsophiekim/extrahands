@@ -12,7 +12,7 @@ add_action('wp_enqueue_scripts', 'addLinks_extrahands');
 
 add_theme_support('wp-block-styles');
 add_theme_support('title_tag');
-add_theme_support('post-thumbnails',  array( 'post' ) );
+add_theme_support('post-thumbnails',  array( 'post', 'page') );
 add_theme_support('post-formats', array('video', 'audio', 'image', 'gallery'));
 
 function addCustomMenus_extrahands(){
