@@ -5,7 +5,6 @@
     */
  ?>
 
-
 <?php get_header(); ?>
 <?php if(has_post_thumbnail()): ?>
     <div class="container-fluid p-0 center">
@@ -30,6 +29,7 @@
   </div>
 </div>
 
+<?php if (is_page('about')): ?>
 <div class="sub-info bg-white d-flex text-center">
   <div class="col-4 py-5">
       <i class="material-icons text-primary" style="font-size:60px;">brightness_high</i>
@@ -60,6 +60,61 @@
     <p class="text-align-left">Our team is always coming up with new ideas. We thought it would be great to offer a service where we set up a composting system in our client’s garden to recycle the green waste from our gardening work and maintain that for them. We would love to hear your sustainable ideas and other feedback.</p>
   </div>
 </div>
+<?php endif; ?>
 
+
+<?php if(is_page('contact')): ?>
+
+<div class="bg-white">
+  <div class="btnSet d-flex justify-content-center pt-4">
+    <button class="btn btn-outline-primary mx-2" type="button" name="button">Wellingtion</button>
+    <button class="btn btn-outline-primary mx-2" type="button" name="button">Palmerston North</button>
+    <button class="btn btn-outline-primary mx-2" type="button" name="button">Kapiti Coast</button>
+    <button class="btn btn-outline-primary mx-2" type="button" name="button">Hutt Valley</button>
+    <button class="btn btn-outline-primary mx-2" type="button" name="button">Christchurch</button>
+    <button class="btn btn-outline-primary mx-2" type="button" name="button">Feilding</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <p>map</p>
+    </div>
+    <div class="col-4 bg-info">
+      <p>Wellington</p>
+      <p>04 589 3245</p>
+      <p>Whitby<br/>Porirua<br/>Tawa<br/>Johnsonville<br/>Wellington CBD<br/>Wellington suburbs</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h2 class="text-center"><?php the_title(); ?></h2>
+  <form class="contact" action="index.html" method="post">
+    <div class="row">
+      <div class="col-6">
+        <label for="inputName">Name</label>
+        <input type="text" class="form-control" placeholder="Name">
+        <label for="inputPhone">Phone</label>
+        <input type="Number" class="form-control" placeholder="Phone">
+        <label for="inputEmail4">Email</label>
+        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+        <label for="inputAddress">Address</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+      </div>
+      <div class="col-6">
+        <label for="inputMessage">Message</label>
+        <textarea name="Message" rows="10" cols="46"></textarea>
+      </div>
+    </div>
+    <div class="col-12 d-flex justify-content-center pb-5">
+      <button type="submit" class="btn btn-warning my-4">Submit</button>
+    </div>
+  </form>
+
+</div>
+
+<?php endif; ?>
 
  <?php get_footer(); ?>
