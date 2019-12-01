@@ -45,6 +45,18 @@
        'title'           => __('Company Info', 'extrahands'),
        'priority'        => 70
    ));
+   $wp_customize->add_setting('extrahands_footer_logo', array(
+       'transport'      => 'refresh'
+   ));
+   $wp_customize->add_control(new WP_Customize_Cropped_Image_Control( $wp_customize, 'extrahands_footer_logo', array(
+       'label'             => __('Footer Logo', 'extrahands'),
+       'section'           => 'extrahands_header',
+       'setting'           => 'extrahands_footer_logo',
+       'height' => 80,
+       'width' => 100,
+       'flex_width ' => false,
+       'flex_height ' => false,
+   )));
    $wp_customize->add_setting('extrahands_phone', array(
        'default'        => '0800535355',
        'transport'      => 'refresh',

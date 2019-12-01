@@ -25,7 +25,7 @@
     <div class="row">
      <?php while($allServices -> have_posts()): $allServices-> the_post(); ?>
       <div class="col col-12 d-flex">
-        <?php the_content(); ?>
+            <?php the_content(); ?>
         <p class="px-5"><?php echo get_post_meta(get_the_ID(), 'service_info', true); ?></p>
         <button class="btn btn-outline-light btn-sm svc-btn" type="button" name="button">
             <a class="learnMore" href="<?php the_permalink(); ?>">Learn More</a>
@@ -37,72 +37,6 @@
 </div>
 <?php endif; ?>
 
-
-<div class="bg-white">
-  <section class="testimonial">
-    <h3 class="text-center py-3 text-dark">Testimonial</h3>
-    <div class="row">
-        <?php
-        for ($i=1; $i <= 3 ; $i++) {
-            if((get_theme_mod('extrahands_testimonial_img_'.$i)) ||(get_theme_mod('extrahands_testimonial_text_'.$i))){
-                $firstSlide = $i;
-                break;
-            }
-        }
-        ?>
-        <?php if(isset($firstSlide)): ?>
-            <div class="container">
-                <div id="homeCarousel" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                        </ol>
-                      <?php
-                          for ($i=1; $i <= 3 ; $i++) {
-                              if(get_theme_mod('extrahands_testimonial_img_'.$i)){
-                                  $firstSlide = $i;
-                                  break;
-                              }
-                          }
-                       ?>
-                       <?php if(isset($firstSlide)): ?>
-                           <div class="container">
-                               <div id="homeCarousel" class="carousel slide" data-ride="carousel">
-                                   <div class="carousel-inner">
-                                      <?php for ($i=1; $i <= 3 ; $i++): ?>
-                                          <?php if(get_theme_mod('extrahands_testimonial_img_'.$i)): ?>
-                                             <div class="carousel-item <?php if($firstSlide === $i){ echo 'active';} ?>">
-                                                 <img src="<?php echo get_theme_mod( 'extrahands_testimonial_img_' . $i ); ?>" class="d-block carouselImg mx-auto" alt="testimonialImg">
-                                             </div>
-
-                                          <?php endif; ?>
-                                      <?php endfor; ?>
-                                   </div>
-                                   <?php for ($i=1; $i <= 3 ; $i++): ?>
-                                       <?php if(get_theme_mod('extrahands_testimonial_text_'.$i)): ?>
-                                         <div class="carousel-caption d-none d-md-block ">
-                                           <p class="text-dark"><?php echo get_theme_mod('extrahands_testimonial_text_'.$i); ?></p>
-                                         </div>
-                                       <?php endif; ?>
-                                     <?php endfor; ?>
-                               </div>
-
-                       <?php endif; ?>
-
-                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
-                    </a>
-                </div>
-        <?php endif; ?>
-    </div>
-  </section>
-</div>
 
 
 <?php get_footer(); ?>

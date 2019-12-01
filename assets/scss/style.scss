@@ -14,6 +14,11 @@ body{
 .navbar-brand{
   font-family: 'Bangers', cursive;
 }
+.topbar{
+    position: sticky;
+    top:0;
+    z-index: 5;
+}
 #top_nav{
   justify-content: flex-end;
 }
@@ -76,4 +81,12 @@ body{
 .sub-text-bold{
   font-weight: bold;
   font-size: 1.5em;
+}
+.footerNav{
+    li{
+        a{
+            color: black;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+    }
 }
