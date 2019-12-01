@@ -1,6 +1,6 @@
 <?php
     /*
-        Template Name: Header Image Template
+        Template Name: Contact Template
         Template Post Type: page, post
     */
  ?>
@@ -24,56 +24,37 @@
 
 <div class="content ">
   <div class="container">
-    <h1><?php the_post(); ?></h1>
-    <?php the_content(); ?>
+    <?php if (have_posts()): ?>
+        <?php while(have_posts()): the_post(); ?>
+            <?php the_content(); ?>
+        <?php endwhile; ?>
+    <?php endif; ?>
   </div>
 </div>
-
-<?php if (is_page('about')): ?>
-<div class="sub-info bg-white d-flex text-center">
-  <div class="col-4 py-5">
-      <i class="material-icons text-primary" style="font-size:60px;">brightness_high</i>
-      <p class="text-primary sub-text-bold">Service Guarantee</p>
-  </div>
-  <div class="col-4 py-5">
-      <i class="material-icons text-primary" style="font-size:60px;">flip_camera_android</i>
-      <p class="text-primary sub-text-bold">Quality Monitoring</p>
-  </div>
-  <div class="col-4 py-5">
-      <i class="material-icons text-primary" style="font-size:60px;">verified_user</i>
-      <p class="text-primary sub-text-bold">Security Privacy</p>
-  </div>
-</div>
-
-
-<div class="row d-flex text-center">
-  <div class="col-4 bg-info py-5 px-4">
-    <h4 class="text-uppercase pb-2">Cleaning Products</h4>
-    <p class="text-align-left">Our cleaning products have all-natural ingredients which made exclusively for us so we know exactly what the ingredients are. All ingredients are chosen with our goal to be sustainable. In addition to this we have found that they are much healthier for our team to use, and leave a lovely smell in your home.</p>
-  </div>
-  <div class="col-4 bg-secondary py-5 px-4">
-    <h4 class="text-uppercase pb-2">Waste Reduction</h4>
-    <p class="text-align-left">At An Extra Pair of Hands, all packaging, incoming mail and outgoing mail has been reduced. Our administration team is working towards receiving all incoming mail electronically. This has reduced our waste paper considerably.</p>
-  </div>
-  <div class="col-4 bg-info py-5 px-4">
-    <h4 class="text-uppercase pb-2">Ideas from our team</h4>
-    <p class="text-align-left">Our team is always coming up with new ideas. We thought it would be great to offer a service where we set up a composting system in our client’s garden to recycle the green waste from our gardening work and maintain that for them. We would love to hear your sustainable ideas and other feedback.</p>
-  </div>
-</div>
-<?php endif; ?>
 
 
 <?php if(is_page('contact')): ?>
-
 <div class="bg-white">
   <div class="btnSet d-flex justify-content-center pt-4">
+  <?php if(has_nav_menu('branches_nav')): ?>
+      <div class="col">
+          <?php
+            wp_nav_menu(array( 'theme_location' => 'branches_nav',
+                               'container' => '',
+                               'menu_class' => 'branchesNav'
+          ));
+           ?>
+      </div>
+    </div>
+  <?php endif; ?>
+
     <button class="btn btn-outline-primary mx-2" type="button" name="button">Wellingtion</button>
     <button class="btn btn-outline-primary mx-2" type="button" name="button">Palmerston North</button>
     <button class="btn btn-outline-primary mx-2" type="button" name="button">Kapiti Coast</button>
     <button class="btn btn-outline-primary mx-2" type="button" name="button">Hutt Valley</button>
     <button class="btn btn-outline-primary mx-2" type="button" name="button">Christchurch</button>
     <button class="btn btn-outline-primary mx-2" type="button" name="button">Feilding</button>
-  </div>
+
 </div>
 
 <div class="container">

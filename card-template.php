@@ -22,14 +22,26 @@
     </div>
 <?php endif; ?>
 
-<div class="content">
+<div class="content bg-white text-dark">
   <div class="container">
-    <h1> <?php the_title(); ?></h1>
-
+    <div class="row py-3">
+      <?php if (have_posts()): ?>
+         <?php while(have_posts()): the_post(); ?>
+           <div class="col col-lg-3 col-md-5 col-sm-12 m-1">
+              <div class="card bg-transparent" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title"><?php echo the_title(); ?></h5>
+                  <h6 class="card-subtitle mb-2 text-muted"><?php echo the_title(); ?></h6>
+                  <p class="card-text"><?php the_excerpt(); ?></p>
+                  <a class="btn btn-light" href="<?php the_permalink(); ?>" class="card-link">Learn More</a>
+                </div>
+              </div>
+            </div>
+          <?php endwhile; ?>
+        <?php endif; ?>
+    </div>
   </div>
 </div>
-
-
 
 
  <?php get_footer(); ?>

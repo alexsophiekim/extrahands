@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="utf-8">
+  <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?php echo get_bloginfo('name'); ?></title>
   <?php wp_head(); ?>
@@ -24,7 +24,7 @@
       <?php if(has_custom_logo()): ?>
           <?php  the_custom_logo('extrahands_logo'); ?>
       <?php  else:  ?>
-        <a class="navbar-brand" href="#"><?php echo get_bloginfo('name'); ?></a>
+        <a class="navbar-brand" href=" <?php echo get_option("siteurl"); ?> "><?php echo get_bloginfo('name'); ?></a>
      <?php endif;  ?>
       <?php
           wp_nav_menu( array(

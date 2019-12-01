@@ -81,6 +81,16 @@
        'section'    => 'extrahands_header',
        'settings'   => 'extrahands_sub_intro'
     ));
+    $wp_customize->add_setting('extrahands_booknow_checkbox', array(
+        'default'        => true,
+        'transport'      => 'refresh'
+    ));
+    $wp_customize->add_control('extrahands_booknow_checkbox_control', array(
+      'label' => __( 'Booking button display', 'extrahands' ),
+      'section'  => 'extrahands_header',
+      'settings'   => 'extrahands_booknow_checkbox',
+      'type'=> 'checkbox',
+    ));
     $wp_customize->add_section('extrahands_testimonial', array(
            'title'            => __('Testimonial', 'extrahands'),
            'priority'         => 80,

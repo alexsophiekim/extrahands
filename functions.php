@@ -4,8 +4,8 @@ function addLinks_extrahands() {
     wp_enqueue_style('customCSS_extrahands', get_template_directory_uri() . '/assets/css/style.css', array(), '0.0.2', 'all');
     wp_enqueue_script('jquery');
     wp_enqueue_script('bootstrapJS_extrahands', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '4.3.1', true);
+    wp_enqueue_script('fontawesome');
     wp_enqueue_script('customJS_extrahands', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), '0.0.1', true);
-    wp_enqueue_style('MaterialIcons', 'https://fonts.googleapis.com/icon?family=Material+Icons');
     wp_enqueue_style('fonts','https://fonts.googleapis.com/css?family=Amiko:400,600,700|Anton|Bangers&display=swap');
 };
 add_action('wp_enqueue_scripts', 'addLinks_extrahands');
@@ -57,11 +57,30 @@ function add_service_post_types(){
         'menu_icon' => 'dashicons-smiley',
         'delete_with_user' => false,
         'public' => true,
-        'supports' => array('thumbnail','editor','title')
+        'supports' => array('thumbnail','editor','title','excerpt')
     );
     register_post_type('service', $args);
 }
 add_action('init', 'add_service_post_types');
+
+function add_quality_post_types(){
+    $args = array(
+        'labels' => array(
+            'name' => 'Qualities',
+            'singular_name' => 'Quality',
+        ),
+        'hierarchical' => true,
+        'show_in_nav_menus' => false,
+        'show_in_rest' => false,
+        'menu_position' => 6,
+        'menu_icon' => 'dashicons-nametag',
+        'delete_with_user' => false,
+        'public' => true,
+        'supports' => array('thumbnail','editor','title','excerpt')
+    );
+    register_post_type('quality', $args);
+}
+add_action('init', 'add_quality_post_types');
 
 
 

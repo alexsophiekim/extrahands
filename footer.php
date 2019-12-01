@@ -61,5 +61,6 @@
 <?php endif; ?>
 
 <?php wp_footer(); ?>
+<script src="https://kit.fontawesome.com/59f042e417.js" crossorigin="anonymous"></script>
 </body>
 </html>
