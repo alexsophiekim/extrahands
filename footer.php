@@ -50,15 +50,15 @@
                                          'menu_class' => 'contactNav footerNav'
                     ));
                      ?>
-                     <div class="row">
+                     <div class="row text-dark">
                          <div class="col text-center">
                              <p class="text-dark"><?php echo get_theme_mod('extrahands_phone'); ?></p>
                              <?php
-                                $id = get_theme_mod('extrahands_footer_logo');
-                                var_dump($id);
-                                
-                             ?>
-                             <img src="<?php get_theme_mod('extrahands_footer_logo'); ?>" alt="">
+                                $id= get_theme_mod('extrahands_footer_logo');
+                                var_dump(wp_get_attachment_image($id));
+                              ?>
+                             <img src="<?php echo esc_url( wp_get_attachment_image($id)) ;?>" alt="">
+
                          </div>
                      </div>
                 </div>

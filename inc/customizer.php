@@ -52,8 +52,8 @@
        'label'             => __('Footer Logo', 'extrahands'),
        'section'           => 'extrahands_header',
        'setting'           => 'extrahands_footer_logo',
-       'height' => 80,
-       'width' => 100,
+       'width'            => 100,
+       'height'           => 80,
        'flex_width ' => false,
        'flex_height ' => false,
    )));

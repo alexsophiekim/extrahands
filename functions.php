@@ -83,7 +83,6 @@ function add_quality_post_types(){
 add_action('init', 'add_quality_post_types');
 
 
-
 require_once get_template_directory() . '/inc/customizer.php';
 require_once get_template_directory() . '/inc/custom_fields.php';
 

@@ -28,7 +28,7 @@
         <?php the_content(); ?>
         <p class="px-5"><?php echo get_post_meta(get_the_ID(), 'service_info', true); ?></p>
         <button class="btn btn-outline-light btn-sm svc-btn" type="button" name="button">
-            <a class="learnMore" href="<?php the_permalink(); ?>">Learn More</a>
+            <a class="learnMore" href="services">Learn More</a>
         </button>
       </div>
     <?php endwhile; ?>
