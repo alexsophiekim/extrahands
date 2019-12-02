@@ -7,7 +7,7 @@
         <p class="spacing pb-5"><?php echo get_theme_mod('extrahands_sub_intro'); ?></p>
     <?php endif; ?>
     <?php if (get_theme_mod('extrahands_booknow_checkbox')): ?>
-      <button class="btn btn-lg btn-warning my-5 booknowBtn" type="button" name="button">BOOK NOW</button>
+      <button class="btn btn-lg btn-warning my-5 booknowBtn" type="button" name="button" data-toggle="modal" data-target="#myModal">BOOK NOW</button>
     <?php endif; ?>
 </div>
 
@@ -44,7 +44,7 @@
     <h3 class="text-center py-3 text-dark">Testimonial</h3>
     <div class="row">
         <?php
-        for ($i=1; $i <= 3 ; $i++) {
+        for ($i=1; $i <= 5 ; $i++) {
             if((get_theme_mod('extrahands_testimonial_img_'.$i)) ||(get_theme_mod('extrahands_testimonial_text_'.$i))){
                 $firstSlide = $i;
                 break;
@@ -55,7 +55,7 @@
             <div class="container">
                 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
-                        <?php for ($i=1; $i <= 3 ; $i++) : ?>
+                        <?php for ($i=1; $i <= 5 ; $i++) : ?>
                             <?php if(get_theme_mod('extrahands_testimonial_img_'.$i)): ?>
                           <li data-target="#carouselExampleCaptions" data-slide-to="<?php echo $i-1; ?>" class="<?php if($firstSlide === $i){ echo 'active';} ?>"></li>
                         <?php endif; ?>
@@ -63,7 +63,7 @@
                     </ol>
                        <?php if(isset($firstSlide)): ?>
                                    <div class="carousel-inner">
-                                      <?php for ($i=1; $i <= 3 ; $i++): ?>
+                                      <?php for ($i=1; $i <= 5 ; $i++): ?>
                                           <?php if(get_theme_mod('extrahands_testimonial_img_'.$i)): ?>
                                              <div class="carousel-item <?php if($firstSlide === $i){ echo 'active';} ?>">
                                                  <img src="<?php echo get_theme_mod( 'extrahands_testimonial_img_' . $i ); ?>" class="d-block carouselImg mx-auto" alt="testimonialImg">
@@ -90,6 +90,47 @@
   </section>
 </div>
 
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <form class="contact" method="post">
+          <h1 class="text-dark text-center pt-5">BOOK NOW</h1>
+          <p class="text-dark text-center px-2">Our administration centre covers all our service areas around the country. When you get in touch with our office team, you’re not contacting a call centre. You’ll receive relevant information immediately. They can help with a new enquiry, quote request, or check your existing booking.</p>
+         <div class="row">
+             <div class="col-12 py-5 text-dark">
+                 <select class="form-control">
+                  <option>Default select</option>
+                </select>
+             </div>
+         </div>
+        <div class="row mx-2">
+          <div class="col-6 py-5 text-dark">
+            <label for="inputName">Name</label>
+            <input type="text" class="form-control" placeholder="Name">
+            <label for="inputPhone">Phone</label>
+            <input type="Number" class="form-control" placeholder="Phone">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          </div>
+          <div class="col-6 py-5 text-dark">
+            <label for="inputMessage">Message</label>
+            <textarea name="Message" rows="10" cols="40" placeholder="message" class="w-100"></textarea>
+          </div>
+        </div>
+        <div class="col-12 d-flex justify-content-center pb-5">
+          <button type="submit" class="btn btn-warning my-4">Submit</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
 
 
 <?php get_footer(); ?>
