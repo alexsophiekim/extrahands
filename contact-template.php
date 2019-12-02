@@ -6,6 +6,7 @@
  ?>
 
 <?php get_header(); ?>
+
 <?php if(has_post_thumbnail()): ?>
     <div class="container-fluid p-0 center">
       <div class="post-image">
@@ -32,7 +33,6 @@
   </div>
 </div>
 
-
 <?php if(is_page('contact')): ?>
 <div class="bg-white">
   <div class="btnSet d-flex justify-content-center pt-4">
@@ -42,30 +42,24 @@
             wp_nav_menu(array( 'theme_location' => 'branches_nav',
                                'container' => '',
                                'menu_class' => 'branchesNav'
+
           ));
            ?>
       </div>
     </div>
   <?php endif; ?>
 
-    <button class="btn btn-outline-primary mx-2" type="button" name="button">Wellingtion</button>
-    <button class="btn btn-outline-primary mx-2" type="button" name="button">Palmerston North</button>
-    <button class="btn btn-outline-primary mx-2" type="button" name="button">Kapiti Coast</button>
-    <button class="btn btn-outline-primary mx-2" type="button" name="button">Hutt Valley</button>
-    <button class="btn btn-outline-primary mx-2" type="button" name="button">Christchurch</button>
-    <button class="btn btn-outline-primary mx-2" type="button" name="button">Feilding</button>
+    <!-- <button class="btn btn-outline-primary mx-2" type="button" name="button">Wellingtion</button> -->
 
 </div>
 
 <div class="container">
   <div class="row">
     <div class="col-8">
-      <p>map</p>
+
     </div>
     <div class="col-4 bg-info">
-      <p>Wellington</p>
-      <p>04 589 3245</p>
-      <p>Whitby<br/>Porirua<br/>Tawa<br/>Johnsonville<br/>Wellington CBD<br/>Wellington suburbs</p>
+
     </div>
   </div>
 </div>

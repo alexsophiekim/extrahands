@@ -22,8 +22,8 @@ body {
   z-index: 5;
 }
 
-#top_nav {
-  justify-content: flex-end;
+.rightNav {
+  justify-content: flex-end !important;
 }
 
 .quoteBtn {

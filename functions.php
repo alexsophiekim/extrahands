@@ -72,15 +72,36 @@ function add_quality_post_types(){
         'hierarchical' => true,
         'show_in_nav_menus' => false,
         'show_in_rest' => false,
-        'menu_position' => 6,
+        'menu_position' => 7,
         'menu_icon' => 'dashicons-nametag',
         'delete_with_user' => false,
         'public' => true,
-        'supports' => array('thumbnail','editor','title','excerpt')
+        'supports' => array('thumbnail','editor','title')
     );
     register_post_type('quality', $args);
 }
 add_action('init', 'add_quality_post_types');
+
+
+function add_items_post_types(){
+    $args = array(
+        'labels' => array(
+            'name' => 'Items',
+            'singular_name' => 'Item',
+        ),
+        'hierarchical' => true,
+        'show_in_nav_menus' => false,
+        'show_in_rest' => false,
+        'menu_position' =>8,
+        'menu_icon' => 'dashicons-editor-ul',
+        'delete_with_user' => false,
+        'public' => true,
+        'supports' => array('thumbnail','editor','title')
+    );
+    register_post_type('item', $args);
+}
+add_action('init', 'add_items_post_types');
+
 
 
 require_once get_template_directory() . '/inc/customizer.php';

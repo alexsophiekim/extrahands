@@ -55,10 +55,8 @@
                              <p class="text-dark"><?php echo get_theme_mod('extrahands_phone'); ?></p>
                              <?php
                                 $id= get_theme_mod('extrahands_footer_logo');
-                                var_dump(wp_get_attachment_image($id));
+                                print_r(wp_get_attachment_image($id));
                               ?>
-                             <img src="<?php echo esc_url( wp_get_attachment_image($id)) ;?>" alt="">
-
                          </div>
                      </div>
                 </div>

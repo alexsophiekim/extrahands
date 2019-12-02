@@ -27,9 +27,6 @@
 }
 add_action('save_post','save_serviceInfo_meta_boxes');
 
- ?>
-
- <?php
 
      function add_quality_custom_meta_boxes(){
         add_meta_box( 'qualityInfo', 'Quality Info', 'qualityInfoCallback','quality','normal','default', null);
@@ -53,5 +50,7 @@ add_action('save_post','save_serviceInfo_meta_boxes');
      }
  }
  add_action('save_post','save_qualityInfo_meta_boxes');
+
+
 
   ?>

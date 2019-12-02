@@ -19,8 +19,8 @@ body{
     top:0;
     z-index: 5;
 }
-#top_nav{
-  justify-content: flex-end;
+.rightNav{
+  justify-content: flex-end !important;
 }
 .quoteBtn{
   height: 30px;
