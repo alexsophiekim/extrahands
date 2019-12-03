@@ -1,7 +1,7 @@
 
   <footer class="bg-light p-4">
     <div class="row">
-        <div class="footerAlign col-lg-12 d-flex">
+        <div class="footerAlign col-lg-12 d-flex nobull">
             <?php if(has_nav_menu('service_nav')): ?>
                 <div class="col">
                     <?php

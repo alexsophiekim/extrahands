@@ -42,7 +42,7 @@
 <div class="bg-white">
   <section class="testimonial">
     <h3 class="text-center py-3 text-dark">Testimonial</h3>
-    <div class="row">
+    <div class="row m-0">
         <?php
         for ($i=1; $i <= 5 ; $i++) {
             if((get_theme_mod('extrahands_testimonial_img_'.$i)) ||(get_theme_mod('extrahands_testimonial_text_'.$i))){

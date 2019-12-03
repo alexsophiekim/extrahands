@@ -100,13 +100,34 @@ body{
   }
 }
 .footerNav{
+    list-style:none;
     li{
+        list-style: none;
         a{
             color: black;
             font-family: 'Source Sans Pro', sans-serif;
         }
     }
 }
+.branchSet{
+    .menu-item{
+        .sub-menu{
+            display: flex;
+            justify-content: space-around;
+            li{
+                border: 2px solid #2F80ED;
+                padding: 2px 8px;
+                &:hover, &:active{
+                    background-color: #2F80ED;
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+}
+
 .bookFormTitle{
     font-family: 'Anton', sans-serif;
     font-weight: bold;
@@ -124,7 +145,6 @@ body{
     right: 2%;
     top: 5%;
 }
-
 #myModal{
     margin:auto;
     .modal-dialog{

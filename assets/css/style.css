@@ -121,9 +121,29 @@ body {
   }
 }
 
+.footerNav {
+  list-style: none;
+}
+.footerNav li {
+  list-style: none;
+}
 .footerNav li a {
   color: black;
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+.branchSet .menu-item .sub-menu {
+  display: flex;
+  justify-content: space-around;
+}
+.branchSet .menu-item .sub-menu li {
+  border: 2px solid #2F80ED;
+  padding: 2px 8px;
+}
+.branchSet .menu-item .sub-menu li:hover, .branchSet .menu-item .sub-menu li:active {
+  background-color: #2F80ED;
+  color: #fff;
+  text-decoration: none;
 }
 
 .bookFormTitle {

@@ -53,7 +53,7 @@
 </div>
 
 
-<div class="row d-flex text-center">
+<div class="row d-flex text-center m-0">
   <?php
       $args = array(
           'post_type' => 'value'
