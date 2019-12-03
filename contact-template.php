@@ -35,7 +35,7 @@
 
 <?php if(is_page('contact')): ?>
 <div class="bg-white">
-  <div class="btnSet d-flex justify-content-center pt-4">
+  <div class="btnSet d-flex pt-4">
   <?php if(has_nav_menu('branches_nav')): ?>
       <div class="col">
           <?php
@@ -68,7 +68,7 @@
   <h2 class="text-center"><?php the_title(); ?></h2>
   <form class="contact" action="index.html" method="post">
     <div class="row">
-      <div class="col-6">
+      <div class="col-lg-6 col-sm-12">
         <label for="inputName">Name</label>
         <input type="text" class="form-control" placeholder="Name">
         <label for="inputPhone">Phone</label>
@@ -78,8 +78,8 @@
         <label for="inputAddress">Address</label>
         <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
       </div>
-      <div class="col-6">
-        <label for="inputMessage">Message</label>
+      <div class="col-lg-6 col-sm-12">
+        <label for="inputMessage">Message</label><br/>
         <textarea name="Message" rows="10" cols="46"></textarea>
       </div>
     </div>

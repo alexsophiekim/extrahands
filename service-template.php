@@ -38,10 +38,10 @@
     <div class="container">
       <div class="row py-3">
         <?php while($allItems -> have_posts()): $allItems-> the_post(); ?>
-             <div class="col col-lg-4 col-md-6 col-sm-12 my-1 mx-auto">
+             <div class="col col-lg-3 col-md-6 col-sm-12 my-1 mx-auto">
                 <div class=" bg-transparent" style="width: 18rem;">
                   <div class="card-body">
-                    <p class="card-text"><?php the_title(); ?><br/> <?php the_content(); ?></p>
+                    <p class="card-text"><br/> <?php the_content(); ?></p>
                   </div>
                 </div>
               </div>

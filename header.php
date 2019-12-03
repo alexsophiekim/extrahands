@@ -7,14 +7,14 @@
   <?php wp_head(); ?>
 </head>
 <body>
-  <div class="bg-blue topbar d-flex justify-content-between align-items-center px-3">
+  <div class="bg-blue topbar d-flex justify-content-between align-items-center p-0">
       <?php if (get_theme_mod('extrahands_phone') && (get_theme_mod('extrahands_email'))): ?>
           <p class="text-light pb-0 mb-0">
               <?php echo get_theme_mod('extrahands_phone'); ?> &nbsp;&nbsp;&nbsp;&nbsp;
               <?php echo get_theme_mod('extrahands_email'); ?>
           </p>
       <?php endif; ?>
-    <button class="quoteBtn my-1">Get a quote</button>
+    <button class="quoteBtn my-1 px-3">Get a quote</button>
   </div>
   <?php if (has_nav_menu('top_nav')): ?>
     <nav class="navbar navbar-expand-md navbar-dark d-flex" role="navigation">

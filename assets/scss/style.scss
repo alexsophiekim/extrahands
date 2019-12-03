@@ -1,4 +1,9 @@
 @import 'mixin';
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 body{
   font-family: 'Source Sans Pro', sans-serif;
   background-color: #2F80ED;
@@ -71,6 +76,14 @@ body{
       }
   }
 }
+.serviceAlign{
+    flex-direction: row;
+    @include respond-to(sm){
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 10%;
+    }
+}
 .carouselImg{
     max-width: 400px;
     height: 300px;
@@ -88,5 +101,16 @@ body{
             color: black;
             font-family: 'Source Sans Pro', sans-serif;
         }
+    }
+}
+.bookFormTitle{
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+}
+.footerAlign{
+    flex-direction: row;
+    @include respond-to(sm){
+        flex-direction: column;
+        text-align: center;
     }
 }

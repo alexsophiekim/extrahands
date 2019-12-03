@@ -20,15 +20,15 @@
 
 <?php if($allServices -> have_posts()): ?>
 <div class="container mt-5">
-  <section class="services">
+  <section class="services mb-4">
     <h3 class="text-center py-3">Services</h3>
     <div class="row">
      <?php while($allServices -> have_posts()): $allServices-> the_post(); ?>
-      <div class="col col-12 d-flex">
+      <div class="col col-12 d-flex serviceAlign">
         <?php the_content(); ?>
         <p class="px-5"><?php echo get_post_meta(get_the_ID(), 'service_info', true); ?></p>
         <button class="btn btn-outline-light btn-sm svc-btn" type="button" name="button">
-            <a class="learnMore" href="services">Learn More</a>
+            <a class="learnMore" href="index.php/services">Learn More</a>
         </button>
       </div>
     <?php endwhile; ?>
@@ -98,17 +98,33 @@
     <!-- Modal content-->
     <div class="modal-content">
       <form class="contact" method="post">
-          <h1 class="text-dark text-center pt-5">BOOK NOW</h1>
+          <h1 class="text-dark text-center pt-5 bookFormTitle">BOOK NOW</h1>
           <p class="text-dark text-center px-2">Our administration centre covers all our service areas around the country. When you get in touch with our office team, you’re not contacting a call centre. You’ll receive relevant information immediately. They can help with a new enquiry, quote request, or check your existing booking.</p>
-         <div class="row">
-             <div class="col-12 py-5 text-dark">
+         <div class="row mx-2">
+             <div class="col-12 pt-5 text-dark">
+                 <label for="inputName">Location</label>
                  <select class="form-control">
-                  <option>Default select</option>
+                  <option>Wellignton</option>
+                  <option>Kapiti Coast</option>
+                  <option>Hutt Valley</option>
+                  <option>Palmerstion North</option>
+                  <option>Christchurch</option>
+                  <option>Feilding</option>
                 </select>
+                <label for="inputName">Service</label>
+                <select class="form-control">
+                 <option>Home Cleaning</option>
+                 <option>Gardening</option>
+                 <option>Commercial Cleaning</option>
+               </select>
+               <label for="inputName">Option</label>
+               <select class="form-control">
+                <option>3 Bedroom / 2 Bathroom</option>
+              </select>
              </div>
          </div>
         <div class="row mx-2">
-          <div class="col-6 py-5 text-dark">
+          <div class="col-6 py-3 text-dark">
             <label for="inputName">Name</label>
             <input type="text" class="form-control" placeholder="Name">
             <label for="inputPhone">Phone</label>

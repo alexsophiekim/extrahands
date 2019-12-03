@@ -1,7 +1,7 @@
 
   <footer class="bg-light py-4">
     <div class="row">
-        <div class="col-lg-12  d-flex">
+        <div class="footerAlign col-lg-12 d-flex">
             <?php if(has_nav_menu('service_nav')): ?>
                 <div class="col">
                     <?php
@@ -51,7 +51,7 @@
                     ));
                      ?>
                      <div class="row text-dark">
-                         <div class="col text-center">
+                         <div class="col">
                              <p class="text-dark"><?php echo get_theme_mod('extrahands_phone'); ?></p>
                              <?php
                                 $id= get_theme_mod('extrahands_footer_logo');
