@@ -137,8 +137,19 @@ body {
 
 .close {
   position: absolute;
-  right: 3%;
+  z-index: 100;
+  right: 2%;
   top: 5%;
+}
+
+#myModal {
+  margin: auto;
+}
+@media (max-width: 576px) {
+  #myModal .modal-dialog {
+    width: 355px;
+    margin: auto;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

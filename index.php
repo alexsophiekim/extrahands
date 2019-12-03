@@ -47,7 +47,7 @@
       <form class="contact" method="post">
           <a class="text-dark close" data-dismiss="modal" href="_blank"><i class="fas fa-times fa-lg"></i></a>
           <h1 class="text-dark text-center pt-5 bookFormTitle">BOOK NOW</h1>
-          <p class="text-dark text-center px-2">Our administration centre covers all our service areas around the country. When you get in touch with our office team, you’re not contacting a call centre. You’ll receive relevant information immediately. They can help with a new enquiry, quote request, or check your existing booking.</p>
+          <p class="text-dark text-center px-4">Our administration centre covers all our service areas around the country. When you get in touch with our office team, you’re not contacting a call centre. You’ll receive relevant information immediately. They can help with a new enquiry, quote request, or check your existing booking.</p>
          <div class="row mx-2">
              <div class="col-12 pt-4 text-dark">
                  <label for="inputName">Location</label>

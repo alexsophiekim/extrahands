@@ -116,6 +116,18 @@ body{
 }
 .close{
     position: absolute;
+    z-index: 100;
     right: 2%;
     top: 5%;
+}
+
+#myModal{
+    margin:auto;
+    .modal-dialog{
+        @include respond-to(sm){
+            width: 355px;
+            margin:auto
+        }
+    }
+
 }
