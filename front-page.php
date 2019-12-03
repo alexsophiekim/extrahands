@@ -101,7 +101,7 @@
           <h1 class="text-dark text-center pt-5 bookFormTitle">BOOK NOW</h1>
           <p class="text-dark text-center px-2">Our administration centre covers all our service areas around the country. When you get in touch with our office team, you’re not contacting a call centre. You’ll receive relevant information immediately. They can help with a new enquiry, quote request, or check your existing booking.</p>
          <div class="row mx-2">
-             <div class="col-12 pt-5 text-dark">
+             <div class="col-12 pt-4 text-dark">
                  <label for="inputName">Location</label>
                  <select class="form-control">
                   <option>Wellignton</option>
@@ -136,7 +136,7 @@
           </div>
           <div class="col-6 py-5 text-dark">
             <label for="inputMessage">Message</label>
-            <textarea name="Message" rows="10" cols="40" placeholder="message" class="w-100"></textarea>
+            <textarea name="Message" rows="7" cols="40" placeholder="message" class="w-100"></textarea>
           </div>
         </div>
         <div class="col-12 d-flex justify-content-center pb-5">

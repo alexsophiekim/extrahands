@@ -1,5 +1,5 @@
 
-  <footer class="bg-light py-4">
+  <footer class="bg-light p-4">
     <div class="row">
         <div class="footerAlign col-lg-12 d-flex">
             <?php if(has_nav_menu('service_nav')): ?>
