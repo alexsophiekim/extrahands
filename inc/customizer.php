@@ -107,7 +107,7 @@
            'title'            => __('Testimonial', 'extrahands'),
            'priority'         => 80,
     ));
-        for ($i=1; $i <=3 ; $i++) {
+        for ($i=1; $i <=5 ; $i++) {
             $wp_customize->add_setting('extrahands_testimonial_img_' .$i, array(
                    'transport'        => 'refresh',
                    'height'           => 250,

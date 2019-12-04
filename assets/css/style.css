@@ -1,5 +1,11 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Amiko', sans-serif;
   background-color: #2F80ED;
   color: #fff;
 }
@@ -84,6 +90,17 @@ body {
   color: #2F80ED !important;
 }
 
+.serviceAlign {
+  flex-direction: row;
+}
+@media (max-width: 576px) {
+  .serviceAlign {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 10%;
+  }
+}
+
 .carouselImg {
   max-width: 400px;
   height: 300px;
@@ -97,10 +114,95 @@ body {
   font-weight: bold;
   font-size: 1.5em;
 }
+@media (max-width: 576px) {
+  .sub-text-bold {
+    font-weight: normal;
+    font-size: 1.2em;
+  }
+}
 
+.footerNav {
+  list-style: none;
+}
+.footerNav li {
+  list-style: none;
+}
 .footerNav li a {
   color: black;
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+.branchSet .menu-item .sub-menu {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+.branchSet .menu-item .sub-menu li {
+  list-style: none;
+  border: 2px solid #2F80ED;
+  padding: 2px 8px;
+}
+.branchSet .menu-item .sub-menu li:hover, .branchSet .menu-item .sub-menu liactive {
+  background-color: #2F80ED;
+  color: #fff;
+}
+.branchSet .menu-item .sub-menu li:hover a, .branchSet .menu-item .sub-menu liactive a {
+  color: #F2C94C;
+  text-decoration: none;
+}
+.branchSet .menu-item .sub-menu li:hover a:hover, .branchSet .menu-item .sub-menu li:hover a:active, .branchSet .menu-item .sub-menu liactive a:hover, .branchSet .menu-item .sub-menu liactive a:active {
+  color: #F2C94C;
+  text-decoration: none;
+}
+@media (max-width: 576px) {
+  .branchSet .menu-item .sub-menu li {
+    border: none;
+  }
+  .branchSet .menu-item .sub-menu li:hover, .branchSet .menu-item .sub-menu liactive {
+    background-color: transparent;
+  }
+}
+@media (max-width: 576px) {
+  .branchSet .menu-item .sub-menu {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.bookFormTitle {
+  font-family: 'Anton', sans-serif;
+  font-weight: bold;
+}
+
+.footerAlign {
+  flex-direction: row;
+}
+@media (max-width: 576px) {
+  .footerAlign {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.close {
+  position: absolute;
+  z-index: 100;
+  right: 2%;
+  top: 5%;
+}
+
+#myModal {
+  margin: auto;
+}
+@media (max-width: 576px) {
+  #myModal .modal-dialog {
+    width: 355px;
+    margin: auto;
+  }
+}
+
+iframe {
+  width: auto;
 }
 
 /*# sourceMappingURL=style.css.map */

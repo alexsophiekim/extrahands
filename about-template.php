@@ -34,16 +34,6 @@
 
 
 
-  <div class="sub-info bg-white d-flex text-center">
-    <div class="col-4 py-5">
-      <?php if(get_post('service-guarantee')): ?>
-
-      <?php the_content(); ?>
-      <h4 class="text-primary sub-text-bold"><?php the_title(); ?></h4>
-      <?php endif; ?>
-    </div>
-  </div>
-
 <div class="sub-info bg-white d-flex text-center">
   <?php
       $args = array(
@@ -54,28 +44,28 @@
 
   <?php if($allQualities -> have_posts()): ?>
     <?php while($allQualities -> have_posts()): $allQualities-> the_post(); ?>
-  <div class="col-4 py-5">
+  <div class="col-lg-4 qualitySet py-5">
       <?php the_content(); ?>
       <p class="text-primary sub-text-bold"><?php the_title(); ?></p>
   </div>
-<?php endwhile; ?>
-<?php endif; ?>
+    <?php endwhile; ?>
+    <?php endif; ?>
 </div>
 
 
-<div class="row d-flex text-center">
+<div class="row d-flex text-center m-0">
   <?php
       $args = array(
-          'post_type' => 'quality'
+          'post_type' => 'value'
       );
       $allQualities = new WP_Query($args);
    ?>
 
    <?php if ($allQualities -> have_posts()): ?>
      <?php while($allQualities -> have_posts()): $allQualities-> the_post(); ?>
-  <div class="col-4 bg-info py-5 px-4">
+  <div class="col-lg-4 col-sm-12 bg-info py-5 px-4">
     <h4 class="text-uppercase pb-2"><?php the_title(); ?></h4>
-    <p class="text-align-left"><?php echo get_post_meta(get_the_ID(), 'quality_info', true); ?></p>
+    <p class="text-align-left"><?php echo the_content(); ?></p>
   </div>
 <?php endwhile; ?>
 <?php endif; ?>

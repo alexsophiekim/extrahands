@@ -45,8 +45,34 @@
     <!-- Modal content-->
     <div class="modal-content">
       <form class="contact" method="post">
-        <div class="row">
-          <div class="col-6">
+          <a class="text-dark close" data-dismiss="modal" href="_blank"><i class="fas fa-times fa-lg"></i></a>
+          <h1 class="text-dark text-center pt-5 bookFormTitle">BOOK NOW</h1>
+          <p class="text-dark text-center px-4">Our administration centre covers all our service areas around the country. When you get in touch with our office team, you’re not contacting a call centre. You’ll receive relevant information immediately. They can help with a new enquiry, quote request, or check your existing booking.</p>
+         <div class="row mx-2">
+             <div class="col-12 pt-4 text-dark">
+                 <label for="inputName">Location</label>
+                 <select class="form-control">
+                  <option>Wellignton</option>
+                  <option>Kapiti Coast</option>
+                  <option>Hutt Valley</option>
+                  <option>Palmerstion North</option>
+                  <option>Christchurch</option>
+                  <option>Feilding</option>
+                </select>
+                <label for="inputName">Service</label>
+                <select class="form-control">
+                 <option>Home Cleaning</option>
+                 <option>Gardening</option>
+                 <option>Commercial Cleaning</option>
+               </select>
+               <label for="inputName">Option</label>
+               <select class="form-control">
+                <option>3 Bedroom / 2 Bathroom</option>
+              </select>
+             </div>
+         </div>
+        <div class="row mx-2">
+          <div class="col-6 py-3 text-dark">
             <label for="inputName">Name</label>
             <input type="text" class="form-control" placeholder="Name">
             <label for="inputPhone">Phone</label>
@@ -56,9 +82,9 @@
             <label for="inputAddress">Address</label>
             <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
           </div>
-          <div class="col-6">
+          <div class="col-6 py-5 text-dark">
             <label for="inputMessage">Message</label>
-            <textarea name="Message" rows="10" cols="46"></textarea>
+            <textarea name="Message" rows="7" cols="40" placeholder="message" class="w-100"></textarea>
           </div>
         </div>
         <div class="col-12 d-flex justify-content-center pb-5">
@@ -69,5 +95,6 @@
 
   </div>
 </div>
+
 
 <?php get_footer(); ?>
