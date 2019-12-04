@@ -14,11 +14,13 @@ $ git clone https://github.com/alexsophiekim/extrahands.git
 ### Plugins
 
 **Show Current Template**
+
 **AGP Font Awesome Collection**
+
 **All in One SEO Pack**
 
 ### Copyrights
 
 The extrahands wordpress theme is create for educational purposes at YOOBEE Design College.
 Real business Website is https://anextrapairofhands.co.nz/
-This project design and development By  </b> [Sophie Kim](https://sophie-kim.com/)
+This project design and development By [Sophie Kim](https://sophie-kim.com/)
