@@ -113,19 +113,37 @@ body{
     .menu-item{
         .sub-menu{
             display: flex;
+            list-style: none;
             justify-content: space-around;
             li{
+                list-style: none;
                 border: 2px solid #2F80ED;
                 padding: 2px 8px;
-                &:hover, &:active{
+                &:hover, &active{
                     background-color: #2F80ED;
                     color: #fff;
-                    text-decoration: none;
+                    a{
+                        color: #F2C94C;
+                        text-decoration: none;
+                        &:hover, &:active{
+                            color: #F2C94C;
+                            text-decoration: none;
+                        }
+                    }
                 }
+                @include respond-to(sm){
+                    border: none;
+                    &:hover, &active{
+                        background-color: transparent;
+                    }
+                }
+            }
+            @include respond-to(sm){
+                flex-direction: column;
+                text-align: center;
             }
         }
     }
-
 }
 
 .bookFormTitle{
@@ -154,4 +172,7 @@ body{
         }
     }
 
+}
+iframe{
+    width: auto !important;
 }
