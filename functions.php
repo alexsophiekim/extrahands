@@ -125,6 +125,7 @@ add_action('init', 'add_values_post_types');
 
 require_once get_template_directory() . '/inc/customizer.php';
 require_once get_template_directory() . '/inc/custom_fields.php';
+require get_parent_theme_file_path('/assets/educational_alert.php');
 
 
  ?>
