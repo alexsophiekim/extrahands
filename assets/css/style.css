@@ -8,6 +8,7 @@ body {
   font-family: 'Amiko', sans-serif;
   background-color: #2F80ED;
   color: #fff;
+  overflow: hidden;
 }
 
 .bg-yellow {
@@ -23,9 +24,15 @@ body {
 }
 
 .topbar {
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 5;
+}
+
+.navbar {
+  position: relative;
+  top: 50px;
 }
 
 .rightNav {
@@ -202,7 +209,7 @@ body {
 }
 
 iframe {
-  width: auto;
+  width: auto !important;
 }
 
 /*# sourceMappingURL=style.css.map */
