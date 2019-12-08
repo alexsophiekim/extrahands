@@ -37,20 +37,20 @@
 </div>
 <?php endif; ?>
 
-
-
+<?php
+for ($i=1; $i <= 5 ; $i++) {
+    if((get_theme_mod('extrahands_testimonial_img_'.$i)) ||(get_theme_mod('extrahands_testimonial_text_'.$i))){
+        $firstSlide = $i;
+        break;
+    }
+}
+?>
+<?php if((get_theme_mod('extrahands_testimonial_img_'.$i))||(get_theme_mod('extrahands_testimonial_text_'.$i))): ?>
 <div class="bg-white">
   <section class="testimonial">
     <h3 class="text-center py-3 text-dark">Testimonial</h3>
     <div class="row m-0">
-        <?php
-        for ($i=1; $i <= 5 ; $i++) {
-            if((get_theme_mod('extrahands_testimonial_img_'.$i)) ||(get_theme_mod('extrahands_testimonial_text_'.$i))){
-                $firstSlide = $i;
-                break;
-            }
-        }
-        ?>
+
         <?php if(isset($firstSlide)): ?>
             <div class="container">
                 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -68,7 +68,7 @@
                                              <div class="carousel-item <?php if($firstSlide === $i){ echo 'active';} ?>">
                                                  <img src="<?php echo get_theme_mod( 'extrahands_testimonial_img_' . $i ); ?>" class="d-block carouselImg mx-auto" alt="testimonialImg">
                                                  <div class="carousel-caption d-none d-md-block">
-                                                     <p class="text-dark font-weight-bold bg-white"><?php echo get_theme_mod('extrahands_testimonial_text_' .$i); ?></p>
+                                                     <p class="carouselText text-dark font-weight-bold"><?php echo get_theme_mod('extrahands_testimonial_text_' .$i); ?></p>
                                                </div>
                                              </div>
                                           <?php endif; ?>
@@ -89,6 +89,8 @@
     </div>
   </section>
 </div>
+<?php endif; ?>
+
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
