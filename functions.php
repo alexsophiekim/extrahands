@@ -15,6 +15,23 @@ add_theme_support('title_tag');
 add_theme_support('post-thumbnails',  array( 'post', 'page') );
 add_theme_support('post-formats', array('video', 'audio', 'image', 'gallery'));
 
+
+function customize_admin_labels() {
+   global $wp_post_types;
+   $labels = &$wp_post_types['page']->labels;
+   $labels->name = 'Main Menus';
+   $labels->singular_name = 'Main Menu';
+   $labels->add_new = 'Add Main Menu';
+   $labels->add_new_item = 'Add Main Menu';
+   $labels->edit_item = 'Edit Main Menus';
+   $labels->new_item = 'Menu';
+   $labels->view_item = 'View Menus';
+   $labels->search_items = 'Search Menus';
+   $labels->not_found = 'No Menus found';
+   $labels->not_found_in_trash = 'No Menus found in Trash';
+ }
+ add_action( 'init', 'customize_admin_labels' );
+
 function addCustomMenus_extrahands(){
   add_theme_support('menus');
   register_nav_menus( array(
@@ -57,7 +74,7 @@ function add_service_post_types(){
         'menu_icon' => 'dashicons-smiley',
         'delete_with_user' => false,
         'public' => true,
-        'supports' => array('thumbnail','editor','title','excerpt')
+        'supports' => array('thumbnail','title')
     );
     register_post_type('service', $args);
 }

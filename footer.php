@@ -32,6 +32,7 @@
                      ?>
                 </div>
             <?php endif; ?>
+
             <?php if(has_nav_menu('company_nav')): ?>
                 <div class="col">
                     <?php
