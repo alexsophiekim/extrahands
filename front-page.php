@@ -37,7 +37,10 @@
 </div>
 <?php endif; ?>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 418689a29e02697bf6521a0e67645a9cf4c92a7f
 <?php
 for ($i=1; $i <= 5 ; $i++) {
     if((get_theme_mod('extrahands_testimonial_img_'.$i)) ||(get_theme_mod('extrahands_testimonial_text_'.$i))){
@@ -46,6 +49,7 @@ for ($i=1; $i <= 5 ; $i++) {
     }
 }
 ?>
+<<<<<<< HEAD
 <?php if((get_theme_mod('extrahands_testimonial_img_'.$i)) ||(get_theme_mod('extrahands_testimonial_text_'.$i))): ?>
   <div class="bg-white">
     <section class="testimonial">
@@ -91,6 +95,54 @@ for ($i=1; $i <= 5 ; $i++) {
     </section>
   </div>
 <?php endif; ?>
+=======
+<?php if((get_theme_mod('extrahands_testimonial_img_'.$i))||(get_theme_mod('extrahands_testimonial_text_'.$i))): ?>
+<div class="bg-white">
+  <section class="testimonial">
+    <h3 class="text-center py-3 text-dark">Testimonial</h3>
+    <div class="row m-0">
+
+        <?php if(isset($firstSlide)): ?>
+            <div class="container">
+                <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <?php for ($i=1; $i <= 5 ; $i++) : ?>
+                            <?php if(get_theme_mod('extrahands_testimonial_img_'.$i)): ?>
+                          <li data-target="#carouselExampleCaptions" data-slide-to="<?php echo $i-1; ?>" class="<?php if($firstSlide === $i){ echo 'active';} ?>"></li>
+                        <?php endif; ?>
+                        <?php endfor; ?>
+                    </ol>
+                       <?php if(isset($firstSlide)): ?>
+                                   <div class="carousel-inner">
+                                      <?php for ($i=1; $i <= 5 ; $i++): ?>
+                                          <?php if(get_theme_mod('extrahands_testimonial_img_'.$i)): ?>
+                                             <div class="carousel-item <?php if($firstSlide === $i){ echo 'active';} ?>">
+                                                 <img src="<?php echo get_theme_mod( 'extrahands_testimonial_img_' . $i ); ?>" class="d-block carouselImg mx-auto" alt="testimonialImg">
+                                                 <div class="carousel-caption d-none d-md-block position-relative">
+                                                     <p class="carouselText text-dark font-weight-bold"><?php echo get_theme_mod('extrahands_testimonial_text_' .$i); ?></p>
+                                               </div>
+                                             </div>
+                                          <?php endif; ?>
+                                      <?php endfor; ?>
+                                   </div>
+                       <?php endif; ?>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+        <?php endif; ?>
+    </div>
+    </div>
+    </div>
+  </section>
+</div>
+<?php endif; ?>
+
+>>>>>>> 418689a29e02697bf6521a0e67645a9cf4c92a7f
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
