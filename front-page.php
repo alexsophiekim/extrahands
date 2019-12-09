@@ -37,10 +37,6 @@
 </div>
 <?php endif; ?>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 418689a29e02697bf6521a0e67645a9cf4c92a7f
 <?php
 for ($i=1; $i <= 5 ; $i++) {
     if((get_theme_mod('extrahands_testimonial_img_'.$i)) ||(get_theme_mod('extrahands_testimonial_text_'.$i))){
@@ -49,7 +45,7 @@ for ($i=1; $i <= 5 ; $i++) {
     }
 }
 ?>
-<<<<<<< HEAD
+
 <?php if((get_theme_mod('extrahands_testimonial_img_'.$i)) ||(get_theme_mod('extrahands_testimonial_text_'.$i))): ?>
   <div class="bg-white">
     <section class="testimonial">
@@ -95,7 +91,7 @@ for ($i=1; $i <= 5 ; $i++) {
     </section>
   </div>
 <?php endif; ?>
-=======
+
 <?php if((get_theme_mod('extrahands_testimonial_img_'.$i))||(get_theme_mod('extrahands_testimonial_text_'.$i))): ?>
 <div class="bg-white">
   <section class="testimonial">
@@ -142,7 +138,6 @@ for ($i=1; $i <= 5 ; $i++) {
 </div>
 <?php endif; ?>
 
->>>>>>> 418689a29e02697bf6521a0e67645a9cf4c92a7f
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
