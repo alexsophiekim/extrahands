@@ -8,7 +8,7 @@ body{
   font-family: 'Amiko', sans-serif;
   background-color: #2F80ED;
   color: #fff;
-  overflow: hidden;
+  overflow-y: hidden;
   width: 100vw;
 }
 .container-fluid{
@@ -24,14 +24,11 @@ body{
   font-family: 'Bangers', cursive;
 }
 .topbar{
-    position: fixed;
     width: 100%;
     top:0;
     z-index: 5;
 }
 .navbar{
-    position: relative;
-    top:40px;
     background-color: #2F80ED;
 }
 .rightNav{
@@ -97,6 +94,13 @@ body{
 .carouselImg{
     max-width: 400px;
     height: 300px;
+}
+.captionStyle{
+    position: relative;
+    max-width: 70%;
+}
+.carouselText{
+    background-color: #f7fbff73;
 }
 .carousel-control-prev-icon, .carousel-control-next-icon{
   background-color: #2F80ED !important;

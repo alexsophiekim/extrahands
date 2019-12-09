@@ -37,58 +37,66 @@
 </div>
 <?php endif; ?>
 
+<?php
+for ($i=1; $i <= 5 ; $i++) {
+    if((get_theme_mod('extrahands_testimonial_img_'.$i))||(get_theme_mod('extrahands_testimonial_text_'.$i))){
+        $firstSlide = $i;
+        break;
+    }
+}
+?>
+<?php if((get_theme_mod('extrahands_testimonial_img_'.$i))||(get_theme_mod('extrahands_testimonial_text_'.$i))): ?>
+    <div class="bg-white">
+      <section class="testimonial">
+          <h3 class="text-dark text-center py-2">
+              <?php if((get_theme_mod('extrahands_testimonial_img_'.$i))||(get_theme_mod('extrahands_testimonial_text_'.$i))): ?>testimonial <?php endif; ?>
+          </h3>
+        <div class="row m-0">
+            <?php if(isset($firstSlide)): ?>
+                <div class="container">
+                    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <?php for ($i=1; $i <= 5 ; $i++) : ?>
+                                <?php if(get_theme_mod('extrahands_testimonial_img_'.$i)): ?>
+                              <li data-target="#carouselExampleCaptions" data-slide-to="<?php echo $i-1; ?>" class="<?php if($firstSlide === $i){ echo 'active';} ?>"></li>
+                            <?php endif; ?>
+                            <?php endfor; ?>
+                        </ol>
+                           <?php if(isset($firstSlide)): ?>
+                                       <div class="carousel-inner">
+                                          <?php for ($i=1; $i <= 5 ; $i++): ?>
+                                              <?php if(get_theme_mod('extrahands_testimonial_img_'.$i)): ?>
+                                                 <div class="carousel-item <?php if($firstSlide === $i){ echo 'active';} ?>">
+                                                     <img src="<?php echo get_theme_mod( 'extrahands_testimonial_img_' . $i ); ?>" class="d-block carouselImg mx-auto" alt="testimonialImg">
+                                                     <div class="carousel-caption d-none d-md-block captionStyle">
+                                                         <p class="carouselText text-dark font-weight-bold"><?php echo get_theme_mod('extrahands_testimonial_text_' .$i); ?></p>
+                                                   </div>
+                                                 </div>
+                                              <?php endif; ?>
+                                          <?php endfor; ?>
+                                       </div>
+                           <?php endif; ?>
 
 
-<div class="bg-white">
-  <section class="testimonial">
-    <h3 class="text-center py-3 text-dark">Testimonial</h3>
-    <div class="row m-0">
-        <?php
-        for ($i=1; $i <= 5 ; $i++) {
-            if((get_theme_mod('extrahands_testimonial_img_'.$i)) ||(get_theme_mod('extrahands_testimonial_text_'.$i))){
-                $firstSlide = $i;
-                break;
-            }
-        }
-        ?>
-        <?php if(isset($firstSlide)): ?>
-            <div class="container">
-                <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <?php for ($i=1; $i <= 5 ; $i++) : ?>
-                            <?php if(get_theme_mod('extrahands_testimonial_img_'.$i)): ?>
-                          <li data-target="#carouselExampleCaptions" data-slide-to="<?php echo $i-1; ?>" class="<?php if($firstSlide === $i){ echo 'active';} ?>"></li>
-                        <?php endif; ?>
-                        <?php endfor; ?>
-                    </ol>
-                       <?php if(isset($firstSlide)): ?>
-                                   <div class="carousel-inner">
-                                      <?php for ($i=1; $i <= 5 ; $i++): ?>
-                                          <?php if(get_theme_mod('extrahands_testimonial_img_'.$i)): ?>
-                                             <div class="carousel-item <?php if($firstSlide === $i){ echo 'active';} ?>">
-                                                 <img src="<?php echo get_theme_mod( 'extrahands_testimonial_img_' . $i ); ?>" class="d-block carouselImg mx-auto" alt="testimonialImg">
-                                                 <div class="carousel-caption d-none d-md-block">
-                                                     <p class="text-dark font-weight-bold bg-white"><?php echo get_theme_mod('extrahands_testimonial_text_' .$i); ?></p>
-                                               </div>
-                                             </div>
-                                          <?php endif; ?>
-                                      <?php endfor; ?>
-                                   </div>
-                       <?php endif; ?>
-                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
+                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+
+            </div>
+
+        </div>
         <?php endif; ?>
+
+        </div>
+      </section>
     </div>
-    </div>
-    </div>
-  </section>
-</div>
+<?php endif; ?>
+
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
