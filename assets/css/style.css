@@ -115,100 +115,104 @@ body {
   height: 300px; }
 
 /* line 98, ../scss/style.scss */
-.carouselText {
+.captionStyle {
   background-color: #f7fbff73; }
 
 /* line 101, ../scss/style.scss */
+.carouselText {
+  background-color: #f7fbff73; }
+
+/* line 104, ../scss/style.scss */
 .carousel-control-prev-icon, .carousel-control-next-icon {
   background-color: #2F80ED !important; }
 
-/* line 104, ../scss/style.scss */
+/* line 107, ../scss/style.scss */
 .sub-text-bold {
   font-weight: bold;
   font-size: 1.5em; }
   @media (max-width: 576px) {
-    /* line 104, ../scss/style.scss */
+    /* line 107, ../scss/style.scss */
     .sub-text-bold {
       font-weight: normal;
       font-size: 1.2em; } }
 
-/* line 112, ../scss/style.scss */
+/* line 115, ../scss/style.scss */
 .footerNav {
   list-style: none; }
-  /* line 114, ../scss/style.scss */
+  /* line 117, ../scss/style.scss */
   .footerNav li {
     list-style: none; }
-    /* line 116, ../scss/style.scss */
+    /* line 119, ../scss/style.scss */
     .footerNav li a {
       color: black;
       font-family: 'Source Sans Pro', sans-serif; }
 
-/* line 124, ../scss/style.scss */
+/* line 127, ../scss/style.scss */
 .branchSet .menu-item .sub-menu {
   display: flex;
   list-style: none;
   justify-content: space-around; }
-  /* line 128, ../scss/style.scss */
+  /* line 131, ../scss/style.scss */
   .branchSet .menu-item .sub-menu li {
     list-style: none;
     border: 2px solid #2F80ED;
     padding: 2px 8px; }
-    /* line 132, ../scss/style.scss */
+    /* line 135, ../scss/style.scss */
     .branchSet .menu-item .sub-menu li:hover, .branchSet .menu-item .sub-menu liactive {
       background-color: #2F80ED;
       color: #fff; }
-      /* line 135, ../scss/style.scss */
+      /* line 138, ../scss/style.scss */
       .branchSet .menu-item .sub-menu li:hover a, .branchSet .menu-item .sub-menu liactive a {
         color: #F2C94C;
         text-decoration: none; }
-        /* line 138, ../scss/style.scss */
+        /* line 141, ../scss/style.scss */
         .branchSet .menu-item .sub-menu li:hover a:hover, .branchSet .menu-item .sub-menu li:hover a:active, .branchSet .menu-item .sub-menu liactive a:hover, .branchSet .menu-item .sub-menu liactive a:active {
           color: #F2C94C;
           text-decoration: none; }
     @media (max-width: 576px) {
-      /* line 128, ../scss/style.scss */
+      /* line 131, ../scss/style.scss */
       .branchSet .menu-item .sub-menu li {
         border: none; }
-        /* line 146, ../scss/style.scss */
+        /* line 149, ../scss/style.scss */
         .branchSet .menu-item .sub-menu li:hover, .branchSet .menu-item .sub-menu liactive {
           background-color: transparent; } }
   @media (max-width: 576px) {
-    /* line 124, ../scss/style.scss */
+    /* line 127, ../scss/style.scss */
     .branchSet .menu-item .sub-menu {
       flex-direction: column;
       text-align: center; } }
 
-/* line 159, ../scss/style.scss */
+/* line 162, ../scss/style.scss */
 .bookFormTitle {
   font-family: 'Anton', sans-serif;
   font-weight: bold; }
 
-/* line 163, ../scss/style.scss */
+/* line 166, ../scss/style.scss */
 .footerAlign {
   flex-direction: row; }
   @media (max-width: 576px) {
-    /* line 163, ../scss/style.scss */
+    /* line 166, ../scss/style.scss */
     .footerAlign {
       flex-direction: column;
       text-align: center; } }
 
-/* line 170, ../scss/style.scss */
+/* line 173, ../scss/style.scss */
 .close {
   position: absolute;
   z-index: 100;
   right: 2%;
   top: 5%; }
 
-/* line 176, ../scss/style.scss */
+/* line 179, ../scss/style.scss */
 #myModal {
   margin: auto; }
   @media (max-width: 576px) {
-    /* line 178, ../scss/style.scss */
+    /* line 181, ../scss/style.scss */
     #myModal .modal-dialog {
       width: 355px;
       margin: auto; } }
 
-/* line 186, ../scss/style.scss */
+/* line 189, ../scss/style.scss */
 iframe {
   width: auto !important; }
 
