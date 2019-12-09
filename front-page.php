@@ -82,13 +82,18 @@ for ($i=1; $i <= 5 ; $i++) {
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                   </a>
-                  
-                  <div class="carousel-caption d-none d-md-block">
-                      <p class="text-dark font-weight-bold position-relative"><?php echo get_theme_mod('extrahands_testimonial_text_' .$i); ?></p>
-                </div>
-          <?php endif; ?>
+                  <?php if(isset($firstSlide)): ?>
+                    <div class="carousel-caption <?php if($firstSlide === $i){ echo 'active';} ?> d-md-block">
+                      <?php for ($i=1; $i <= 5 ; $i++): ?>
+                          <?php if(get_theme_mod('extrahands_testimonial_text_'.$i)): ?>
+                        <p class="text-dark font-weight-bold d-none"><?php echo get_theme_mod('extrahands_testimonial_text_' .$i); ?></p>
+                      <?php endif; ?>
+                    <?php endfor; ?>
+                  </div>
+                <?php endif; ?>
       </div>
       </div>
+      <?php endif; ?>
       </div>
     </section>
   </div>

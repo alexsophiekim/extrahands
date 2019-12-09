@@ -95,6 +95,11 @@ body{
     max-width: 400px;
     height: 300px;
 }
+.carousel-caption{
+  position: initial !important;
+  max-width: 80% !important;
+  margin: auto !important;
+}
 .captionStyle{
   background-color: #f7fbff73;
 }
