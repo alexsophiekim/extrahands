@@ -23,8 +23,6 @@
 <?php endif; ?>
 
 
-
-
 <?php
     $args = array(
         'post_type' => 'item'
@@ -37,17 +35,24 @@
   <div class="content bg-white text-dark">
     <div class="container">
       <div class="row py-3">
-        <?php while($allItems -> have_posts()): $allItems-> the_post(); ?>
-             <div class="col col-lg-3 col-md-6 col-sm-6 my-1 mx-auto">
-                <div class=" bg-transparent" style="width: 11rem;">
-                  <div class="card-body">
-                    <p class="card-text"><br/> <?php the_content(); ?></p>
-                  </div>
-                </div>
+         <?php while($allItems -> have_posts()): $allItems-> the_post(); ?>
+           <div class="col col-lg-3 col-md-6 col-sm-12 d-flex p-2">
+               <div class="bg-blue p-3 text-white shadow">
+                   <h5 class="text-center text-warning font-weight-bold"><?php the_title(); ?></h5>
+                   <div>
+                       <?php if( !is_singular() ): ?>
+                           <?php the_excerpt() ; ?>
+                           <a href="<?php the_permalink(); ?>" class="btn btn-primary">Read More</a>
+                       <?php else: ?>
+                           <?php the_excerpt(); ?> <a href="<?php the_permalink(); ?>" class="btn btn-sm btn-outline-warning float-right">Read More</a>
+                       <?php endif; ?>
+                   </div>
+
+               </div>
               </div>
-            <?php endwhile; ?>
+              <?php endwhile; ?>
+          </div>
       </div>
-    </div>
   </div>
 <?php endif; ?>
 

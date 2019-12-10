@@ -15,6 +15,15 @@ add_theme_support('title_tag');
 add_theme_support('post-thumbnails',  array( 'post', 'page') );
 add_theme_support('post-formats', array('video', 'audio', 'image', 'gallery'));
 
+function customize_post_admin_menu_labels() {
+ global $menu;
+ global $submenu;
+ $menu[5][0] = 'Footers';
+ $submenu['edit.php'][5][0] = 'Footer Navs';
+ $submenu['edit.php'][10][0] = 'Add Footer Navs';
+ echo '';
+ }
+add_action( 'admin_menu', 'customize_post_admin_menu_labels' );
 
 function customize_admin_labels() {
    global $wp_post_types;
@@ -36,11 +45,7 @@ function addCustomMenus_extrahands(){
   add_theme_support('menus');
   register_nav_menus( array(
     'top_nav' => __('Top Menu'),
-    'service_nav' => __('Service Menu'),
-    'quick_nav' => __('Quick Menu'),
-    'branches_nav' => __('Branches Menu'),
-    'company_nav' => __('Company Menu'),
-    'contact_nav' => __('Contact Menu')
+    'footer_nav'    => __('Footer Menu')
   ));
 }
 add_action('after_setup_theme', 'addCustomMenus_extrahands');
@@ -113,7 +118,7 @@ function add_items_post_types(){
         'menu_icon' => 'dashicons-editor-ul',
         'delete_with_user' => false,
         'public' => true,
-        'supports' => array('thumbnail','editor','title')
+        'supports' => array('thumbnail','editor','title','excerpt')
     );
     register_post_type('item', $args);
 }

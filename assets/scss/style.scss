@@ -34,6 +34,7 @@ body{
 .rightNav{
   justify-content: flex-end !important;
 }
+
 .quoteBtn{
   height: 30px;
   border-radius: 20px;
@@ -90,6 +91,9 @@ body{
         text-align: center;
         margin-bottom: 10%;
     }
+}
+.carousel-indicators{
+    top:0 !important;
 }
 .carouselImg{
     max-width: 400px;
