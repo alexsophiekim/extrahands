@@ -1,14 +1,6 @@
 <?php get_header(); ?>
 
-        <?php if( have_posts() ):  ?>
-                <?php while( have_posts() ): the_post(); ?>
-                    <div class="container my-5">
-                        <h4 class="text-dark"><?php the_title(); ?></h4>
-                        <p class="text-dark text-center"><?php the_excerpt(); ?></p>
-                        <a href="<?php the_permalink(); ?>" class="btn btn-warning">Read More</a>
-                    </div>
-                <?php endwhile; ?>
-        <?php elseif( get_theme_mod('extrahands_main_intro')||get_theme_mod('extrahands_sub_intro')||get_theme_mod('extrahands_booknow_checkbox')): ?>
+        <?php if( get_theme_mod('extrahands_main_intro')||get_theme_mod('extrahands_sub_intro')||get_theme_mod('extrahands_booknow_checkbox')): ?>
             <div class="container text-center">
                 <?php if(get_theme_mod('extrahands_main_intro')): ?>
                     <h1 class="display-4 pt-5 mt-5"><?php echo get_theme_mod('extrahands_main_intro'); ?></h1>
@@ -20,21 +12,7 @@
                   <button class="btn btn-lg btn-warning my-5 booknowBtn" type="button" name="button" data-toggle="modal" data-target="#myModal">BOOK NOW</button>
                 <?php endif; ?>
             </div>
-
         <?php endif; ?>
-
-
-<div class="container text-center">
-    <?php if(get_theme_mod('extrahands_main_intro')): ?>
-        <h1 class="display-4 pt-5 mt-5"><?php echo get_theme_mod('extrahands_main_intro'); ?></h1>
-    <?php endif; ?>
-    <?php if(get_theme_mod('extrahands_sub_intro')): ?>
-        <p class="spacing pb-5"><?php echo get_theme_mod('extrahands_sub_intro'); ?></p>
-    <?php endif; ?>
-    <?php if (get_theme_mod('extrahands_booknow_checkbox')): ?>
-      <button class="btn btn-lg btn-warning my-5 booknowBtn" type="button" name="button" data-toggle="modal" data-target="#myModal">BOOK NOW</button>
-    <?php endif; ?>
-</div>
 
 <?php
     $args = array(
@@ -117,5 +95,22 @@ for ($i=1; $i <= 5 ; $i++) {
     </section>
   </div>
 <?php endif; ?>
+
+
+<?php if( have_posts() ):  ?>
+    <?php while( have_posts() ): the_post(); ?>
+        <?php if(is_singular()): ?>
+            <div class="container my-5 text-dark">
+                <h3><?php the_title(); ?></h3>
+            <?php the_content(); ?>
+            </div>
+        <?php else: ?>
+            <div class="my-3 mx-5 text-dark ">
+                <a href="<?php the_permalink(); ?>"> <h5 class="text-dark"><?php the_title(); ?></h5></a>
+            </div>
+        <?php endif; ?>
+    <?php endwhile; ?>
+<?php endif; ?>
+
 
 <?php get_footer(); ?>

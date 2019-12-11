@@ -27,6 +27,7 @@
         </div>
     </div>
   </footer>
+
 <?php endif; ?>
 <?php if (get_theme_mod('extrahands_copyright_setting')): ?>
   <div class="copyright bg-blue text-center">
