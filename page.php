@@ -1,4 +1,6 @@
 <?php get_header(); ?>
+
+<?php if (get_theme_mod('extrahands_main_intro')||get_theme_mod('extrahands_sub_intro')||get_theme_mod('extrahands_booknow_checkbox')):?>
 <div class="container text-center">
     <?php if(get_theme_mod('extrahands_main_intro')): ?>
         <h1 class="display-4 pt-5 mt-5"><?php echo get_theme_mod('extrahands_main_intro'); ?></h1>
@@ -10,6 +12,7 @@
       <button class="btn btn-lg btn-warning my-5 booknowBtn" type="button" name="button" data-toggle="modal" data-target="#myModal">BOOK NOW</button>
     <?php endif; ?>
 </div>
+<?php endif; ?>
 
 <?php
     $args = array(

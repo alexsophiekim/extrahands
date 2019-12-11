@@ -1,4 +1,42 @@
 <?php get_header(); ?>
+        <?php if( have_posts() ): ?>
+            <div class="container">
+                <?php while( have_posts() ): the_post(); ?>
+                        <h4 class="text-dark text-center"><?php the_title(); ?></h4>
+                        <div class="card-body">
+                            <div class="row d-flex text-dark">
+                                <?php if(has_post_thumbnail()): ?>
+                                    <?php if( !is_singular() ): ?>
+                                        <div class="col-12 col-md-3">
+                                         <?php the_post_thumbnail('medium', ['class' => 'img-fluid']); ?>
+                                        </div>
+                                    <?php else: ?>
+                                        <div class="col-12 mb-5">
+                                            <?php the_post_thumbnail('large', ['class' => 'img-fluid']); ?>
+                                        </div>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                                <div class="row">
+                                    <div class="col">
+                                        <div>
+                                            <?php if( !is_singular() ): ?>
+                                                <?php the_excerpt() ; ?>
+                                            <?php else: ?>
+                                                <?php the_content(); ?>
+                                            <?php endif; ?>
+                                        </div>
+                                        <?php if( !is_singular() ): ?>
+                                            <a href="<?php the_permalink(); ?>" class="btn btn-primary">Read More</a>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                <?php endwhile; ?>
+            </div>
+        <?php endif; ?>
+
 <div class="container text-center">
     <?php if(get_theme_mod('extrahands_main_intro')): ?>
         <h1 class="display-4 pt-5 mt-5"><?php echo get_theme_mod('extrahands_main_intro'); ?></h1>
@@ -92,64 +130,5 @@ for ($i=1; $i <= 5 ; $i++) {
     </section>
   </div>
 <?php endif; ?>
-
-
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <form class="contact" method="post">
-          <a class="text-dark close" data-dismiss="modal" href="_blank"><i class="fas fa-times fa-lg"></i></a>
-          <h1 class="text-dark text-center pt-5 bookFormTitle">BOOK NOW</h1>
-          <p class="text-dark text-center px-4">Our administration centre covers all our service areas around the country. When you get in touch with our office team, you’re not contacting a call centre. You’ll receive relevant information immediately. They can help with a new enquiry, quote request, or check your existing booking.</p>
-         <div class="row mx-2">
-             <div class="col-12 pt-4 text-dark">
-                 <label for="inputName">Location</label>
-                 <select class="form-control">
-                  <option>Wellignton</option>
-                  <option>Kapiti Coast</option>
-                  <option>Hutt Valley</option>
-                  <option>Palmerstion North</option>
-                  <option>Christchurch</option>
-                  <option>Feilding</option>
-                </select>
-                <label for="inputName">Service</label>
-                <select class="form-control">
-                 <option>Home Cleaning</option>
-                 <option>Gardening</option>
-                 <option>Commercial Cleaning</option>
-               </select>
-               <label for="inputName">Option</label>
-               <select class="form-control">
-                <option>3 Bedroom / 2 Bathroom</option>
-              </select>
-             </div>
-         </div>
-        <div class="row mx-2">
-          <div class="col-6 py-3 text-dark">
-            <label for="inputName">Name</label>
-            <input type="text" class="form-control" placeholder="Name">
-            <label for="inputPhone">Phone</label>
-            <input type="Number" class="form-control" placeholder="Phone">
-            <label for="inputEmail4">Email</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-            <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-          </div>
-          <div class="col-6 py-5 text-dark">
-            <label for="inputMessage">Message</label>
-            <textarea name="Message" rows="7" cols="40" placeholder="message" class="w-100"></textarea>
-          </div>
-        </div>
-        <div class="col-12 d-flex justify-content-center pb-5">
-          <button type="submit" class="btn btn-warning my-4">Submit</button>
-        </div>
-      </form>
-    </div>
-
-  </div>
-</div>
 
 <?php get_footer(); ?>

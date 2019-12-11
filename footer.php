@@ -1,4 +1,4 @@
-
+<?php if(has_nav_menu('footer_nav')||get_theme_mod('extrahands_phone')||get_theme_mod('extrahands_footer_logo')): ?>
   <footer class="bg-light p-4">
     <div class="row">
         <div class="footerAlign col-lg-12 d-flex text-center nobull">
@@ -27,6 +27,7 @@
         </div>
     </div>
   </footer>
+<?php endif; ?>
 <?php if (get_theme_mod('extrahands_copyright_setting')): ?>
   <div class="copyright bg-blue text-center">
     <p class="text-center mb-0"><?php echo get_theme_mod('extrahands_copyright_setting');?></p>

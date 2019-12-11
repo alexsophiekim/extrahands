@@ -15,16 +15,6 @@ add_theme_support('title_tag');
 add_theme_support('post-thumbnails',  array( 'post', 'page') );
 add_theme_support('post-formats', array('video', 'audio', 'image', 'gallery'));
 
-function customize_post_admin_menu_labels() {
- global $menu;
- global $submenu;
- $menu[5][0] = 'Footers';
- $submenu['edit.php'][5][0] = 'Footer Navs';
- $submenu['edit.php'][10][0] = 'Add Footer Navs';
- echo '';
- }
-add_action( 'admin_menu', 'customize_post_admin_menu_labels' );
-
 function customize_admin_labels() {
    global $wp_post_types;
    $labels = &$wp_post_types['page']->labels;
