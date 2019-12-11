@@ -36,7 +36,7 @@
     <div class="container">
       <div class="row py-3">
          <?php while($allItems -> have_posts()): $allItems-> the_post(); ?>
-           <div class="col col-lg-3 col-md-6 col-sm-12 d-flex p-2">
+           <div class="col col-lg-3 col-md-6 col-sm-12 d-flex py-2">
                <div class="bg-blue p-3 text-white shadow">
                    <h5 class="text-center text-warning font-weight-bold"><?php the_title(); ?></h5>
                    <div>
