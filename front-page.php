@@ -1,41 +1,28 @@
 <?php get_header(); ?>
-        <?php if( have_posts() ): ?>
+
+        <?php if( have_posts() ): the_post(); ?>
             <div class="container">
                 <?php while( have_posts() ): the_post(); ?>
                         <h4 class="text-dark text-center"><?php the_title(); ?></h4>
-                        <div class="card-body">
-                            <div class="row d-flex text-dark">
-                                <?php if(has_post_thumbnail()): ?>
-                                    <?php if( !is_singular() ): ?>
-                                        <div class="col-12 col-md-3">
-                                         <?php the_post_thumbnail('medium', ['class' => 'img-fluid']); ?>
-                                        </div>
-                                    <?php else: ?>
-                                        <div class="col-12 mb-5">
-                                            <?php the_post_thumbnail('large', ['class' => 'img-fluid']); ?>
-                                        </div>
-                                    <?php endif; ?>
-                                <?php endif; ?>
-                                <div class="row">
-                                    <div class="col">
-                                        <div>
-                                            <?php if( !is_singular() ): ?>
-                                                <?php the_excerpt() ; ?>
-                                            <?php else: ?>
-                                                <?php the_content(); ?>
-                                            <?php endif; ?>
-                                        </div>
-                                        <?php if( !is_singular() ): ?>
-                                            <a href="<?php the_permalink(); ?>" class="btn btn-primary">Read More</a>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
+                        <p class="text-dark text-center"><?php the_excerpt(); ?></p>
                 <?php endwhile; ?>
             </div>
+        <?php elseif( get_theme_mod('extrahands_main_intro')||get_theme_mod('extrahands_sub_intro')||get_theme_mod('extrahands_booknow_checkbox')): ?>
+
+            <div class="container text-center">
+                <?php if(get_theme_mod('extrahands_main_intro')): ?>
+                    <h1 class="display-4 pt-5 mt-5"><?php echo get_theme_mod('extrahands_main_intro'); ?></h1>
+                <?php endif; ?>
+                <?php if(get_theme_mod('extrahands_sub_intro')): ?>
+                    <p class="spacing pb-5"><?php echo get_theme_mod('extrahands_sub_intro'); ?></p>
+                <?php endif; ?>
+                <?php if (get_theme_mod('extrahands_booknow_checkbox')): ?>
+                  <button class="btn btn-lg btn-warning my-5 booknowBtn" type="button" name="button" data-toggle="modal" data-target="#myModal">BOOK NOW</button>
+                <?php endif; ?>
+            </div>
+
         <?php endif; ?>
+
 
 <div class="container text-center">
     <?php if(get_theme_mod('extrahands_main_intro')): ?>
