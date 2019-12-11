@@ -1,8 +1,10 @@
 <?php get_header(); ?>
     <div class="container text-center">
-        <h1 class="display-4 pt-5 mt-5"><?php echo get_theme_mod('extrahands_main_intro','Hello'); ?></h1>
-        <p class="spacing pb-5"><?php echo get_theme_mod('extrahands_sub_intro','This is custom theme'); ?></p>
-      <button class="btn btn-lg btn-warning my-5 booknowBtn" type="button" name="button" data-toggle="modal" data-target="#myModal">BOOK NOW</button>
+        <h1 class="display-4 pt-5 mt-5"><?php echo get_theme_mod('extrahands_main_intro','Hello, main introduce'); ?></h1>
+        <p class="spacing pb-5"><?php echo get_theme_mod('extrahands_sub_intro','This is custom sub introduce.'); ?></p>
+        <?php if (get_theme_mod('extrahands_booknow_checkbox')): ?>
+            <button class="btn btn-lg btn-warning my-5 booknowBtn" type="button" name="button" data-toggle="modal" data-target="#myModal">BOOK NOW</button>
+        <?php endif; ?>
     </div>
 <?php
     $args = array(

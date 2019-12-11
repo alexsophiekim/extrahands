@@ -76,7 +76,7 @@
       'settings'   => 'extrahands_email'
    ));
     $wp_customize->add_setting('extrahands_main_intro', array(
-        'default'        => 'Professional Cleaning and Gardening Company',
+        'default'        => 'Hello, main introduce',
         'transport'      => 'refresh',
     ));
     $wp_customize->add_control('extrahands_main_intro_control', array(
@@ -85,7 +85,7 @@
        'settings'   => 'extrahands_main_intro'
     ));
     $wp_customize->add_setting('extrahands_sub_intro', array(
-        'default'        => 'WE TAKE CARE OF THE LITTLE THINGS',
+        'default'        => 'This is custom sub introduce.',
         'transport'      => 'refresh',
     ) );
     $wp_customize->add_control('extrahands_sub_intro_control', array(
@@ -94,7 +94,7 @@
        'settings'   => 'extrahands_sub_intro'
     ));
     $wp_customize->add_setting('extrahands_booknow_checkbox', array(
-        'default'        => true,
+        'default'        => false,
         'transport'      => 'refresh'
     ));
     $wp_customize->add_control('extrahands_booknow_checkbox_control', array(
