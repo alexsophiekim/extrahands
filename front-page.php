@@ -68,7 +68,7 @@ for ($i=1; $i <= 5 ; $i++) {
                                     <?php if(get_theme_mod('extrahands_testimonial_img_'.$i)): ?>
                                        <div class="carousel-item <?php if($firstSlide === $i){ echo 'active';} ?>">
                                            <img src="<?php echo get_theme_mod( 'extrahands_testimonial_img_' . $i ); ?>" class="d-block carouselImg mx-auto" alt="testimonialImg">
-                                           <div class="carousel-caption d-md-block">
+                                           <div class="carousel-caption d-none d-md-block">
                                              <p class="carouselText text-dark font-weight-bold"><?php echo get_theme_mod('extrahands_testimonial_text_' .$i); ?></p>
                                          </div>
                                        </div>
