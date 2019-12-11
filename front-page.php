@@ -1,14 +1,14 @@
 <?php get_header(); ?>
 
-        <?php if( have_posts() ): the_post(); ?>
-            <div class="container">
+        <?php if( have_posts() ):  ?>
                 <?php while( have_posts() ): the_post(); ?>
-                        <h4 class="text-dark text-center"><?php the_title(); ?></h4>
+                    <div class="container my-5">
+                        <h4 class="text-dark"><?php the_title(); ?></h4>
                         <p class="text-dark text-center"><?php the_excerpt(); ?></p>
+                        <a href="<?php the_permalink(); ?>" class="btn btn-warning">Read More</a>
+                    </div>
                 <?php endwhile; ?>
-            </div>
         <?php elseif( get_theme_mod('extrahands_main_intro')||get_theme_mod('extrahands_sub_intro')||get_theme_mod('extrahands_booknow_checkbox')): ?>
-
             <div class="container text-center">
                 <?php if(get_theme_mod('extrahands_main_intro')): ?>
                     <h1 class="display-4 pt-5 mt-5"><?php echo get_theme_mod('extrahands_main_intro'); ?></h1>
