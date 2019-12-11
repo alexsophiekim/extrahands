@@ -99,10 +99,11 @@ for ($i=1; $i <= 5 ; $i++) {
 
 <?php if( have_posts() ):  ?>
     <?php while( have_posts() ): the_post(); ?>
-        <?php if(is_singular()): ?>
+        <?php if(!is_singular()): ?>
             <div class="container my-5 text-dark">
                 <h3><?php the_title(); ?></h3>
             <?php the_content(); ?>
+            <a class="btn btn-warning" href="<?php the_permalink(); ?>">Read More</a>
             </div>
         <?php endif; ?>
     <?php endwhile; ?>
