@@ -104,10 +104,6 @@ for ($i=1; $i <= 5 ; $i++) {
                 <h3><?php the_title(); ?></h3>
             <?php the_content(); ?>
             </div>
-        <?php else: ?>
-            <div class="my-3 mx-5 text-dark ">
-                <a href="<?php the_permalink(); ?>"> <h5 class="text-dark"><?php the_title(); ?></h5></a>
-            </div>
         <?php endif; ?>
     <?php endwhile; ?>
 <?php endif; ?>
