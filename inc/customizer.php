@@ -113,7 +113,7 @@
                    'height'           => 250,
             ));
             $wp_customize->add_setting('extrahands_testimonial_text_' .$i, array(
-                    'default'        => 'Testimonial'.$i,
+                    'default'        => '',
                     'transport'      => 'refresh',
             ));
             $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'extrahands_testimonial_img_control'.$i, array(

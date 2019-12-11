@@ -11,7 +11,7 @@
       <?php if (get_theme_mod('extrahands_phone') && (get_theme_mod('extrahands_email'))): ?>
           <p class="text-light pb-0 mb-0">
               <?php echo get_theme_mod('extrahands_phone'); ?> &nbsp;&nbsp;&nbsp;&nbsp;
-              <?php echo get_theme_mod('extrahands_email'); ?>
+              <?php echo get_theme_mod('extrahands_email','info@anextrapairofhands.co.nz'); ?>
           </p>
       <?php endif; ?>
   </div>

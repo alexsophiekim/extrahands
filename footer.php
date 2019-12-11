@@ -15,7 +15,7 @@
             <?php if(get_theme_mod('extrahands_phone')||get_theme_mod('extrahands_footer_logo')): ?>
                      <div class="row text-dark ">
                          <div class="col">
-                             <p class="text-dark"><?php echo get_theme_mod('extrahands_phone'); ?></p>
+                             <p class="text-dark"><?php echo get_theme_mod('extrahands_phone','0800535355'); ?></p>
                              <?php
                                 $id= get_theme_mod('extrahands_footer_logo');
                                 print_r(wp_get_attachment_image($id));
@@ -29,9 +29,10 @@
   </footer>
 
 <?php endif; ?>
+
 <?php if (get_theme_mod('extrahands_copyright_setting')): ?>
   <div class="copyright bg-blue text-center">
-    <p class="text-center mb-0"><?php echo get_theme_mod('extrahands_copyright_setting');?></p>
+    <p class="text-center mb-0"><?php echo get_theme_mod('extrahands_copyright_setting','Copyright © 2019 Create by Sophie Kim');?></p>
   </div>
 <?php endif; ?>
 
