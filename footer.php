@@ -30,11 +30,11 @@
 
 <?php endif; ?>
 
-<?php if (get_theme_mod('extrahands_copyright_setting')): ?>
+
   <div class="copyright bg-blue text-center">
     <p class="text-center mb-0"><?php echo get_theme_mod('extrahands_copyright_setting','Copyright © 2019 Create by Sophie Kim');?></p>
   </div>
-<?php endif; ?>
+
 
 <?php wp_footer(); ?>
 <script src="https://kit.fontawesome.com/59f042e417.js" crossorigin="anonymous"></script>
