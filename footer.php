@@ -1,4 +1,4 @@
-<?php if(has_nav_menu('footer_nav')||get_theme_mod('extrahands_phone')||get_theme_mod('extrahands_footer_logo')): ?>
+
   <footer class="bg-light p-4">
     <div class="row">
         <div class="footerAlign col-lg-12 d-flex text-center nobull">
@@ -12,7 +12,7 @@
                      ?>
                 </div>
             <?php endif; ?>
-            <?php if(get_theme_mod('extrahands_phone')||get_theme_mod('extrahands_footer_logo')): ?>
+
                      <div class="row text-dark ">
                          <div class="col">
                              <p class="text-dark"><?php echo get_theme_mod('extrahands_phone','0800535355'); ?></p>
@@ -23,12 +23,11 @@
                          </div>
                      </div>
                 </div>
-            <?php endif; ?>
+            
         </div>
     </div>
   </footer>
 
-<?php endif; ?>
 
 
   <div class="copyright bg-blue text-center">

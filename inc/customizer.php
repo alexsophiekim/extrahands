@@ -58,7 +58,7 @@
        'flex_height ' => false,
    )));
    $wp_customize->add_setting('extrahands_phone', array(
-       'default'        => '',
+       'default'        => '0800535355',
        'transport'      => 'refresh',
    ));
    $wp_customize->add_control('extrahands_phone_control', array(
@@ -67,7 +67,7 @@
       'settings'   => 'extrahands_phone'
    ));
    $wp_customize->add_setting('extrahands_email', array(
-       'default'        => '',
+       'default'        => 'info@company.com',
        'transport'      => 'refresh',
    ));
    $wp_customize->add_control('extrahands_email_control', array(
